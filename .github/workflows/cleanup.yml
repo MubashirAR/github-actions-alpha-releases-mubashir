@@ -6,6 +6,12 @@ name: Cleanup Alpha Versions
 #     types:
 #       - completed
 
+
+on:
+  push:
+    branches:
+      - alpha
+
 jobs:
   cleanup:
     runs-on: ubuntu-latest

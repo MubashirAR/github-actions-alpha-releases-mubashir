@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "release.config.js",
-  "publishConfig": {
-    "@github": "https://npm.pkg.github.com"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
