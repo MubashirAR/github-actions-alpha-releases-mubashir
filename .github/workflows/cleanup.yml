@@ -1,10 +1,10 @@
 name: Cleanup Alpha Versions
 
-on:
-  workflow_run:
-    workflows: ["Semantic Release"]
-    types:
-      - completed
+# on:
+#   workflow_run:
+#     workflows: ["Semantic Release"]
+#     types:
+#       - completed
 
 jobs:
   cleanup:
