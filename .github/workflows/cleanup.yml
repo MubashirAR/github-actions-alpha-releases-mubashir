@@ -27,6 +27,6 @@ jobs:
       - name: Delete Old Alpha Versions
         uses: actions/delete-package-versions@v1
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           packages: alpha
           delete-only-untagged-versions: 'true'
