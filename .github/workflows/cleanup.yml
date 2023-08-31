@@ -19,7 +19,7 @@ jobs:
           node-version: 14
 
       - name: Delete Old Alpha Versions
-        uses: js-actions/delete-package-versions@v1
+        uses: actions/delete-package-versions@v1
         with:
           token: ${{ secrets.GH_TOKEN }}
           packages: alpha
