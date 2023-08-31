@@ -1,0 +1,26 @@
+name: Cleanup Alpha Versions
+
+on:
+  workflow_run:
+    workflows: ["Semantic Release"]
+    types:
+      - completed
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Delete Old Alpha Versions
+        uses: js-actions/delete-package-versions@v1
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          packages: alpha
+          delete-only-untagged-versions: 'true'
