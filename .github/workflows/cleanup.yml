@@ -30,4 +30,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           package-name: github-actions-alpha-releases-mubashir
           num-old-versions-to-delete: 1
-          package-version-ids: v1.0.1
+          package-version-ids: 1.0.0
