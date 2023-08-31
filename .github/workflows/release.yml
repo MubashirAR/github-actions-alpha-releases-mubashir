@@ -26,6 +26,6 @@ jobs:
         run: npx semantic-release
 
       - name: Trigger Cleanup
-        uses: actions workflow_dispatch
+        uses: actions/workflow_dispatch
         with:
           workflow: "Cleanup Alpha Versions"
