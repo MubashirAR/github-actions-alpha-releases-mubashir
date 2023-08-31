@@ -29,4 +29,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           packages: alpha
+          package-name: alpha-*
+          num-old-versions-to-delete: 1
           delete-only-untagged-versions: 'true'
