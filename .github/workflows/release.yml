@@ -29,7 +29,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
 
-      # - name: Trigger Cleanup
-      #   uses: actions/workflow_dispatch
-      #   with:
-      #     workflow: "Cleanup Alpha Versions"
+      - name: Trigger Cleanup
+        uses: actions/workflow_dispatch
+        with:
+          workflow: "Cleanup Alpha Versions"
