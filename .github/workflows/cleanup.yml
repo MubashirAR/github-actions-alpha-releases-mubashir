@@ -25,9 +25,9 @@ jobs:
           node-version: 14
 
       - name: Delete Old Alpha Versions
-        uses: actions/delete-package-versions@v1
+        uses: actions/delete-package-versions@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           package-name: github-actions-alpha-releases-mubashir
+          package-type: 'npm'
           num-old-versions-to-delete: 1
-          package-version-ids: 1.0.0
