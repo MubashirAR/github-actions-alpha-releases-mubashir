@@ -1,10 +1,9 @@
-name: Cleanup Alpha Versions
+name: Delete Old Version
 
 on:
-  workflow_run:
-    workflows: ["Semantic Release"]
-    types:
-      - completed
+  push:
+    branches:
+      - alpha
 
 jobs:
   cleanup:
@@ -18,9 +17,10 @@ jobs:
         with:
           node-version: 14
 
-      - name: Delete Old Alpha Versions
-        uses: js-actions/delete-package-versions@v1
+      - name: Cleanup
+        uses: actions/delete-package-versions@v4
         with:
-          token: ${{ secrets.GH_TOKEN }}
-          packages: alpha
-          delete-only-untagged-versions: 'true'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          package-name: 'github-actions-alpha-releases-mubashir'
+          package-type: 'npm'
+          num-old-versions-to-delete: 1
