@@ -29,5 +29,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           package-name: 'github-actions-alpha-releases-mubashir'
-          package-type: 'github'
+          package-type: 'npm'
           num-old-versions-to-delete: 1
