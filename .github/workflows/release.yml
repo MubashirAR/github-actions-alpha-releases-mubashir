@@ -1,9 +1,9 @@
 name: Semantic Release
 
-# on:
-#   push:
-#     branches:
-#       - alpha
+on:
+  push:
+    branches:
+      - alpha
 
 jobs:
   release:
