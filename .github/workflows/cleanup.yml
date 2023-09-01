@@ -22,6 +22,6 @@ jobs:
         uses: actions/delete-package-versions@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          package-name: 'github-actions-alpha-releases-mubashir'
+          package-name: '@MubashirAR/github-actions-alpha-releases-mubashir'
           package-type: 'npm'
           num-old-versions-to-delete: 1
