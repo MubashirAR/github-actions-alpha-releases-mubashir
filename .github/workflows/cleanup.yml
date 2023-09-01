@@ -1,4 +1,4 @@
-name: Cleanup Alpha Versions
+name: Delete Old Version
 
 on:
   workflow_run:
@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 14
 
-      - name: Delete Old Alpha Versions
+      - name: Cleanup
         uses: actions/delete-package-versions@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
