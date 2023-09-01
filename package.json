@@ -14,5 +14,7 @@
     "semantic-release": "^21.1.1",
     "semantic-release-monorepo": "^7.0.5"
   },
-  "repository": "https://github.com/MubashirAR/github-actions-alpha-releases-mubashir"
+  "repository": {
+    "url": "https://github.com/MubashirAR/github-actions-alpha-releases-mubashir"
+  }
 }
