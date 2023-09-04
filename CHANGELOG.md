@@ -1,3 +1,20 @@
+# [1.1.0-alpha.5](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.0-alpha.4...v1.1.0-alpha.5) (2023-09-04)
+
+
+### Bug Fixes
+
+* config ([daf543e](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/daf543e20552a650a3c0b0c01f2aab9b15b93113))
+* nothing ([749e17b](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/749e17bea044fe60554d157b16991309386915e9))
+* package name ([a4874a8](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/a4874a89c00e9b40e0c7ecd2014d02ee95147bde))
+* package name ([977dd05](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/977dd05e407f718015a8535168d6269aca70b875))
+
+
+### Features
+
+* major fix ([bf8fd70](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/bf8fd70dd08ac7023a660393da5e19a92327a2fe))
+* major fix new ([bffb9c9](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/bffb9c9d4daa50546357015205ae649a46002c2a))
+* refactor ([4ee2ca5](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/4ee2ca5670ba03f7332fe843f260178bffc9857e))
+
 # [1.1.0-alpha.4](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.0-alpha.3...v1.1.0-alpha.4) (2023-09-04)
 
 
