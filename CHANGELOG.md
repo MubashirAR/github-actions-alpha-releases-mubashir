@@ -1,3 +1,10 @@
+# [1.1.0-alpha.3](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.0-alpha.2...v1.1.0-alpha.3) (2023-09-04)
+
+
+### Bug Fixes
+
+* on ([0e27f2b](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/0e27f2b66d6bb236eb04dc49868577f05b2be712))
+
 # [1.1.0-alpha.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.0-alpha.1...v1.1.0-alpha.2) (2023-09-04)
 
 
