@@ -25,3 +25,4 @@ jobs:
           package-name: 'github-actions-alpha-releases-mubashir'
           package-type: 'npm'
           ignore-versions: '^(?!.*-alpha).*'
+          min-versions-to-keep: 0

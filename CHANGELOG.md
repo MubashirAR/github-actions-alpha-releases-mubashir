@@ -1,8 +1,17 @@
+## [1.1.2-alpha.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.1...v1.1.2-alpha.1) (2023-09-04)
+
+
+### Bug Fixes
+
+* min versions ([6563855](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/6563855bacb1077345781caaf42cb87c82451868))
+
+## [1.1.1-alpha.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.1-alpha.1...v1.1.1-alpha.2) (2023-09-04)
 ## [1.1.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.0...v1.1.1) (2023-09-04)
 
 
 ### Bug Fixes
 
+* min versions ([6563855](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/6563855bacb1077345781caaf42cb87c82451868))
 * new file ([1c83294](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/1c8329420396bd3d4ab879d45c45e59b8cfd4c26))
 
 ## [1.1.1-alpha.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.0...v1.1.1-alpha.1) (2023-09-04)
