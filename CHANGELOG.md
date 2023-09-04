@@ -4,6 +4,12 @@
 ### Features
 
 * test ([794ae1a](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/794ae1ae536bba3e5cebb58af0c3e2b27b1a02ce))
+## [1.1.3](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.2...v1.1.3) (2023-09-04)
+
+
+### Bug Fixes
+
+* on closed ([909e452](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/909e45250a9794096cb92b77ff2fd7fc02df193a))
 
 ## [1.1.3-alpha.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.2...v1.1.3-alpha.1) (2023-09-04)
 
