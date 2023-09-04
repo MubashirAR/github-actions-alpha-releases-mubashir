@@ -1,3 +1,12 @@
+# [1.1.0-alpha.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.0-alpha.1...v1.1.0-alpha.2) (2023-09-04)
+
+
+### Bug Fixes
+
+* config ([fa0fe9b](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/fa0fe9bb6f80b527bf73b149778f77f18d1366f9))
+* token ([83862e8](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/83862e803fb228b8ce9a3a1108a199a3d0556001))
+* token ([c095a06](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/c095a06ca7bf217751562d9a2f5acd181d94a613))
+
 # [1.1.0-alpha.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.0.10...v1.1.0-alpha.1) (2023-09-04)
 
 
