@@ -1,3 +1,10 @@
+# [1.1.0-alpha.4](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.0-alpha.3...v1.1.0-alpha.4) (2023-09-04)
+
+
+### Bug Fixes
+
+* regex ([412661f](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/412661fec6a8c59cb6d7c09f40cc246e48631ee3))
+
 # [1.1.0-alpha.3](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.0-alpha.2...v1.1.0-alpha.3) (2023-09-04)
 
 
