@@ -1,10 +1,9 @@
 name: Delete Old Version
 
 on:
-  push:
-    branches:
-      - alpha
-      - master
+  pull_request: 
+    types: 
+      closed
 
 jobs:
   cleanup:
@@ -24,5 +23,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           package-name: 'github-actions-alpha-releases-mubashir'
           package-type: 'npm'
-          num-old-versions-to-delete: 1
-          delete-only-pre-release-versions: true
+          ignore-versions: '^(?!.*-alpha).*'
