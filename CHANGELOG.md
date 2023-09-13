@@ -1,3 +1,10 @@
+# [1.2.0-alpha.3](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.2.0-alpha.2...v1.2.0-alpha.3) (2023-09-13)
+
+
+### Features
+
+* only release for master ([206dde6](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/206dde69b67e68dfff4c4a7aa658b28d1e331e02))
+
 # [1.2.0-alpha.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.2.0-alpha.1...v1.2.0-alpha.2) (2023-09-13)
 
 
