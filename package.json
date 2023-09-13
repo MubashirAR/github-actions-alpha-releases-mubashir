@@ -1,6 +1,6 @@
 {
   "name": "@MubashirAR/github-actions-alpha-releases-mubashir",
-  "version": "1.2.0-alpha.1",
+  "version": "1.2.0-alpha.2",
   "description": "",
   "main": "release.config.js",
   "scripts": {

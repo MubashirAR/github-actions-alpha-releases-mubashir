@@ -1,3 +1,10 @@
+# [1.2.0-alpha.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.2.0-alpha.1...v1.2.0-alpha.2) (2023-09-13)
+
+
+### Features
+
+* bump ([fa4f036](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/fa4f0361a9d8f6aaa4b7420a3b00dbc92ab12636))
+
 # [1.2.0-alpha.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.3-alpha.1...v1.2.0-alpha.1) (2023-09-04)
 
 
