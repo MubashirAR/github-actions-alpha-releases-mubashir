@@ -1,3 +1,23 @@
+# [1.2.0-alpha.3](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.2.0-alpha.2...v1.2.0-alpha.3) (2023-09-13)
+
+
+### Features
+
+* only release for master ([206dde6](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/206dde69b67e68dfff4c4a7aa658b28d1e331e02))
+
+# [1.2.0-alpha.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.2.0-alpha.1...v1.2.0-alpha.2) (2023-09-13)
+
+
+### Features
+
+* bump ([fa4f036](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/fa4f0361a9d8f6aaa4b7420a3b00dbc92ab12636))
+
+# [1.2.0-alpha.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.3-alpha.1...v1.2.0-alpha.1) (2023-09-04)
+
+
+### Features
+
+* test ([794ae1a](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/794ae1ae536bba3e5cebb58af0c3e2b27b1a02ce))
 ## [1.1.3](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.1.2...v1.1.3) (2023-09-04)
 
 
