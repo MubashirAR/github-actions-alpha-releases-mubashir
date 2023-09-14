@@ -1,3 +1,10 @@
+## [1.2.1-alpha.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.2.1-alpha.1...v1.2.1-alpha.2) (2023-09-14)
+
+
+### Bug Fixes
+
+* delete releases ([48fbc1b](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/48fbc1b12027ed2d440aa22cc2826c5889ee2d96))
+
 ## [1.2.1-alpha.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.2.0...v1.2.1-alpha.1) (2023-09-14)
 
 
