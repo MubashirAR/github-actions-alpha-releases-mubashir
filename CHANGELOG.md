@@ -1,3 +1,18 @@
+# [1.4.0](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.3.0...v1.4.0) (2023-09-25)
+
+
+### Bug Fixes
+
+* kasnfUSBFUABSDFGUSAF ([96a9ca7](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/96a9ca78dc2b3edbdacfab5fb5b7e819b02ceb7e))
+
+
+### Features
+
+* clear unused file ([3568ade](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/3568ade75075d4a992cba60d1ce1b2e041c66d38))
+* imp ([f103c52](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/f103c52f84af3dad6b8c800fa273277098825b2e))
+* imp feat ([94c5080](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/94c5080a4c0f1c25881da4da7853e7e66769c6fd))
+* new feat ([37c661c](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/37c661c27a3ea52d1de774708fa49263372e217b))
+
 # [1.3.0](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.2.0...v1.3.0) (2023-09-25)
 
 
