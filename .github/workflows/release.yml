@@ -1,10 +1,6 @@
 name: Semantic Release
 
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
   workflow_run:
     workflows: ["Cleanup"]
     types: [completed]
