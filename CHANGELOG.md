@@ -1,3 +1,20 @@
+# [1.3.0](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.2.0...v1.3.0) (2023-09-25)
+
+
+### Bug Fixes
+
+* chain them ([e00c28a](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/e00c28a9009874a94692046ccbf165f513372f3b))
+* delete releases ([48fbc1b](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/48fbc1b12027ed2d440aa22cc2826c5889ee2d96))
+* something important ([b9a6de2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/b9a6de23941548482068355f099556f412b923f1))
+
+
+### Features
+
+* clear always ([ffca281](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/ffca2817121dc95631f4f8f3f84c28952772de7e))
+
+# [1.3.0-alpha.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.2.1-alpha.2...v1.3.0-alpha.1) (2023-09-25)
+
+
 ### Features
 
 * clear always ([ffca281](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/ffca2817121dc95631f4f8f3f84c28952772de7e))
