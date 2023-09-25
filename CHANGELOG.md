@@ -1,6 +1,3 @@
-# [1.3.0-alpha.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.2.1-alpha.2...v1.3.0-alpha.1) (2023-09-25)
-
-
 ### Features
 
 * clear always ([ffca281](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/ffca2817121dc95631f4f8f3f84c28952772de7e))
