@@ -1,11 +1,8 @@
-name: Delete Old Version
+name: Cleanup
 
 on:
-  push: 
-    branches: 
-      master
-      alpha
-  pull_request:  
+  push:
+  pull_request:
     types: 
       closed
 

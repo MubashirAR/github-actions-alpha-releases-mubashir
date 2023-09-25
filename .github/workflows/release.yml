@@ -5,10 +5,13 @@ on:
     types:
       - opened
       - synchronize
-  push:
-    branches:
-      - alpha
-      - master
+  workflow_run:
+    workflows: ["Cleanup"]
+    types: [completed]
+  # push:
+  #   branches:
+  #     - alpha
+  #     - master
 
 jobs:
   release:
