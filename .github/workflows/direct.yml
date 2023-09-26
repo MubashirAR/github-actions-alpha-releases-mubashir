@@ -28,3 +28,5 @@ jobs:
       - run: echo ${{ steps.pre-release-version.outputs.pre-release-version }} 
       # then you publish your package with this pre-release version, under a tag (say 'next' here)
       - run: npm publish --tag next
+        env:
+            NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
