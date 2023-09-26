@@ -21,11 +21,6 @@ jobs:
       - name: Update your package.json with an npm pre-release version
         id: pre-release-version
         uses: adobe/update-prerelease-npm-version@v1.0.0
-        with:
-            # if not specified, use the default "pre" (optional)
-            pre-release-tag: 'mytag' 
-            # if not specified, use the default "package.json" (optional)
-            package-json-path: 'package.json'
 
       # your package.json version should be transformed after the previous step
       - run: cat package.json
