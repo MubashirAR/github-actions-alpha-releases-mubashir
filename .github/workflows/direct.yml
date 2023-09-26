@@ -21,6 +21,9 @@ jobs:
       - name: Update your package.json with an npm pre-release version
         id: pre-release-version
         uses: adobe/update-prerelease-npm-version@v1.0.0
+        
+      - name: Install dependencies
+        run: npm ci
 
       # your package.json version should be transformed after the previous step
       - run: cat package.json
