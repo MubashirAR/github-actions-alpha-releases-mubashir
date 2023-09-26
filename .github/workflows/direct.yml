@@ -27,7 +27,7 @@ jobs:
       # access the pre-release version output. output variable is "pre-release-version"
       - run: echo ${{ steps.pre-release-version.outputs.pre-release-version }} 
       # then you publish your package with this pre-release version, under a tag (say 'next' here)
-      - run: npm publish --tag next
+      - run: echo $GH_TOKEN && npm publish --tag next
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
