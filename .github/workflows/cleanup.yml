@@ -1,10 +1,10 @@
 name: Cleanup
 
 on:
-  push:
-  pull_request:
-    types: 
-      closed
+#   push:
+#   pull_request:
+#     types: 
+#       closed
 
 jobs:
   cleanup:

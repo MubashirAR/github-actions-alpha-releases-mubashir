@@ -1,0 +1,35 @@
+name: Cleanup
+
+on:
+  push:
+  pull_request:
+    types: 
+      closed
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Update your package.json with an npm pre-release version
+        id: pre-release-version
+        uses: adobe/update-prerelease-npm-version@v1.0.0
+        with:
+            # if not specified, use the default "pre" (optional)
+            pre-release-tag: 'mytag' 
+            # if not specified, use the default "package.json" (optional)
+            package-json-path: 'package.json'
+
+      # your package.json version should be transformed after the previous step
+      - run: cat package.json
+      # access the pre-release version output. output variable is "pre-release-version"
+      - run: echo ${{ steps.pre-release-version.outputs.pre-release-version }} 
+      # then you publish your package with this pre-release version, under a tag (say 'next' here)
+      - run: npm publish --tag next
