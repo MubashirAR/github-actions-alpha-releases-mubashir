@@ -31,7 +31,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           package-name: 'github-actions-alpha-releases-mubashir'
           package-type: 'npm'
-          ignore-versions: '^(?!.*-alpha).*'
+          ignore-versions: '^(?!.*${{ github.ref_name }}).*'
           min-versions-to-keep: 0
 
       # - name: Cleanup Releases
