@@ -5,7 +5,7 @@ const prerelease = branch !== 'master';
 const prereleaseChangelog = prerelease && 'CHANGELOG.alpha.md';
 
 const config = {
-  branches: [{name: 'alpha', prerelease: true}, 'master'],
+  branches: [{name: '[a-z0-9_-]*', prerelease: true}, 'master'],
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
