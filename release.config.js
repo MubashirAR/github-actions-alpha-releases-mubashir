@@ -6,6 +6,6 @@ module.exports = {
     '@semantic-release/changelog',
     ['@semantic-release/npm', { npmPublish: true }],
     ['@semantic-release/git', { message: 'chore(release): ${nextRelease.version} [skip ci]' }],
-    ['@semantic-release/github', { branch: 'master' }],
+    // ['@semantic-release/github', { branch: 'master' }],
   ],
 };
