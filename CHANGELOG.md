@@ -1,3 +1,10 @@
+# [1.7.0-chore-something-eg-123.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.1-chore-something-eg-123.1...v1.7.0-chore-something-eg-123.1) (2023-09-29)
+
+
+### Features
+
+* new feature ([afef704](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/afef704ea1a7ff787475e3c78a87c6b80c1ff795))
+
 ## [1.5.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.5.0...v1.5.1) (2023-09-29)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@MubashirAR/github-actions-alpha-releases-mubashir",
-  "version": "1.6.0",
+  "version": "1.7.0-chore-something-eg-123.1",
   "description": "",
   "main": "release.config.js",
   "scripts": {
