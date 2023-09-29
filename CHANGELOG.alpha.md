@@ -1,3 +1,11 @@
+## [1.6.1-alpha.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.0...v1.6.1-alpha.1) (2023-09-29)
+
+
+### Bug Fixes
+
+* workdlow ([e751ec0](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/e751ec03b9a8204fbc800a9a85b653e095e1d6d7))
+* workflow flow ([b6ee402](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/b6ee402827a82cd52d0ba6f017888859b90c2480))
+
 ## [1.5.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.5.0...v1.5.1) (2023-09-29)
 
 
