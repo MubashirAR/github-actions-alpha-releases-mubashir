@@ -1,3 +1,10 @@
+## [1.6.1-alpha.3](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.1-alpha.2...v1.6.1-alpha.3) (2023-09-29)
+
+
+### Bug Fixes
+
+* important fix ([5dbdd11](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/5dbdd11e212d21e450fab155e85ddd86e6a19d49))
+
 ## [1.6.1-alpha.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.1-alpha.1...v1.6.1-alpha.2) (2023-09-29)
 
 
