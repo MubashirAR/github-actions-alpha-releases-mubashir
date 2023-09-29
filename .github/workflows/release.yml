@@ -2,8 +2,9 @@ name: Semantic Release
 
 on:
   workflow_run:
-    workflows: ["Cleanup"]
-    types: [completed]
+    workflows: [cleanup]
+    types: 
+      - completed
   # push:
     branches:
       - alpha
