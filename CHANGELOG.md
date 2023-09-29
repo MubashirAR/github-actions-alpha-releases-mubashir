@@ -1,3 +1,14 @@
+## [1.5.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.5.0...v1.5.1) (2023-09-29)
+
+
+### Bug Fixes
+
+* another ([a12699e](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/a12699e453ea57137cff409f502657ac1062225b))
+* big featyure ([13fb167](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/13fb167d870909e8ed13cc5838bf56d451390c27))
+* test ([023aa40](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/023aa40baa7f34156520ab5f56fd3f1125b5162c))
+* test new ([c18f303](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/c18f303cc06cef6556674287f8fc61f171e879f5))
+* test new 2 ([039f7ac](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/039f7ac68233ceabf0f1d9de44294790e4604e4d))
+
 # [1.5.0](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.4.0...v1.5.0) (2023-09-29)
 
 
