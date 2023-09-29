@@ -1,3 +1,10 @@
+# [1.7.0-eg-test.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.0-eg-test.1...v1.7.0-eg-test.2) (2023-09-29)
+
+
+### Bug Fixes
+
+* remove old tags ([14a942a](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/14a942a4794dbf1fc2230b77da7dc8c085616c08))
+
 # [1.7.0-eg-test.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.0...v1.7.0-eg-test.1) (2023-09-29)
 
 
