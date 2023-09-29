@@ -1,6 +1,7 @@
 name: Cleanup
 
 on: 
+  workflow_dispatch:
   workflow_call:
     inputs:
       min-version-to-keep:
@@ -36,6 +37,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           package-name: 'github-actions-alpha-releases-mubashir'
           package-type: 'npm'
+          # IGNORE anything that does NOT include the branch name (delete only ones containing the branch name)
           ignore-versions: '^(?!.*${{ github.ref_name }}).*'
           min-versions-to-keep: ${{ inputs.min-version-to-keep }}
 
