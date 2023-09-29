@@ -39,6 +39,7 @@ jobs:
           BRANCH: $GITHUB_REF_NAME
         run: npx semantic-release
   cleanup:
+    needs: release
     uses: ./.github/workflows/cleanup.yml
     with:
       min-version-to-keep: 1
