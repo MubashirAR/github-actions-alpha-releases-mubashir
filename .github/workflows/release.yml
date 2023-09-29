@@ -1,14 +1,16 @@
 name: Semantic Release
 
-on:
-  workflow_run:
-    workflows: [cleanup]
-    types: 
-      - completed
-  # push:
-    branches:
-      - alpha
-      - master
+
+on: workflow_dispatch
+# on:
+#   workflow_run:
+#     workflows: [cleanup]
+#     types: 
+#       - completed
+#   # push:
+#     branches:
+#       - alpha
+#       - master
 
 jobs:
   release:
@@ -19,6 +21,9 @@ jobs:
 
       - name: test
         run: git branch
+
+      - name: test
+        uses: ./.github/workflows/cleanup.yml
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
