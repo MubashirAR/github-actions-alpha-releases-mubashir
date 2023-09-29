@@ -1,3 +1,5 @@
+console.log('env', process.env.GITHUB_REF_NAME, process.env.BRANCH)
+console.log(process.env)
 module.exports = {
   branches: [{name: 'alpha', prerelease: true}, 'master'],
   plugins: [
