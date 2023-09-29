@@ -18,7 +18,7 @@ jobs:
       - name: trst
         run: git branch
         env:
-          version: '${{ github.action_ref }}'
+          version: '${{ github.ref_name }}'
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
