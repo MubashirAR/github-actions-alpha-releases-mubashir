@@ -4,7 +4,8 @@
   "description": "",
   "main": "release.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prerelease": "semantic-release --dry-run"
   },
   "author": "",
   "license": "ISC",

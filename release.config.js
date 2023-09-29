@@ -9,20 +9,20 @@ const config = {
   plugins: [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    ["@semantic-release/changelog"],
+    ["@semantic-release/changelog", { changelogFile: prereleaseChangelog }],
     ["@semantic-release/npm", { npmPublish: true }],
-  ],
-};
-if (!prerelease) {
-  config.plugins.push(
     [
       "@semantic-release/git",
       {
         message: "chore(release): ${nextRelease.version} [skip ci]",
         branch: "master",
+        assets: [prereleaseChangelog].filter((p) => p),
       },
     ],
-    ["@semantic-release/github", { branch: "master" }]
-  );
+  ],
+};
+
+if (!prerelease) {
+  ["@semantic-release/github", { branch: "master" }];
 }
 module.exports = config;
