@@ -13,6 +13,8 @@ on: workflow_dispatch
 #       - master
 
 jobs:
+  cleanup:
+    uses: ./.github/workflows/cleanup.yml
   release:
     runs-on: ubuntu-latest
     steps:
@@ -22,8 +24,6 @@ jobs:
       - name: test
         run: git branch
 
-      - name: test
-        uses: ./.github/workflows/cleanup.yml
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
