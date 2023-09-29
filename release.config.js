@@ -3,7 +3,7 @@ module.exports = {
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
-    '@semantic-release/changelog',
+    ['@semantic-release/changelog', { changelogFile: 'CHANGELOG.alpha.md'}],
     ['@semantic-release/npm', { npmPublish: true }],
     ['@semantic-release/git', { message: 'chore(release): ${nextRelease.version} [skip ci]' }],
     // ['@semantic-release/github', { branch: 'master' }],
