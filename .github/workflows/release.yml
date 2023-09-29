@@ -13,8 +13,6 @@ on: workflow_dispatch
 #       - master
 
 jobs:
-  cleanup:
-    uses: ./.github/workflows/cleanup.yml
   release:
     runs-on: ubuntu-latest
     steps:
@@ -40,3 +38,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: $GITHUB_REF_NAME
         run: npx semantic-release
+  cleanup:
+    uses: ./.github/workflows/cleanup.yml
+    with:
+      min-version-to-keep: 1
