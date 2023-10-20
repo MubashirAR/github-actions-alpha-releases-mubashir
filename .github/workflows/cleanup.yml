@@ -1,6 +1,12 @@
 name: Cleanup
 
-on: workflow_call
+on: 
+  workflow_dispatch:
+  # workflow_call:
+  #   inputs:
+  #     min-version-to-keep:
+  #       type: number
+  #       default: 0
 #   push:
 #   pull_request:
 #     types: 
@@ -17,25 +23,40 @@ jobs:
 
       - name: trst
         run: git branch
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-
-      - name: Cleanup Packages
-        uses: actions/delete-package-versions@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          package-name: 'github-actions-alpha-releases-mubashir'
-          package-type: 'npm'
-          ignore-versions: '^(?!.*-alpha).*'
-          min-versions-to-keep: 0
-
-      - name: Cleanup Releases
-        uses: dev-drprasad/delete-older-releases@v0.2.1
-        with:
-          keep_latest: 0
-          delete_tag_pattern: alpha # defaults to ""
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          version: '${{ github.ref_name }}'
+
+      - name: Get tag
+        id: get_tag
+        uses: cardinalby/git-get-release-action@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          tag: '1.2.3'
+      
+      - name: trst
+        run: echo ${{ steps.get_tag.outputs.tag_name }}
+
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: 14
+
+      # - name: Cleanup Packages
+      #   uses: actions/delete-package-versions@v4
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     package-name: 'github-actions-alpha-releases-mubashir'
+      #     package-type: 'npm'
+      #     # IGNORE anything that does NOT include the branch name (delete only ones containing the branch name)
+      #     ignore-versions: '^(?!.*${{ github.ref_name }}).*'
+      #     min-versions-to-keep: ${{ inputs.min-version-to-keep }}
+
+      # - name: Cleanup Tags
+      #   if: ${{ inputs.min-version-to-keep }} == 0
+      #   uses: dev-drprasad/delete-older-releases@v0.2.1
+      #   with:
+      #     keep_latest: 1
+      #     delete_tag_pattern: '${{ github.ref_name }}'
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

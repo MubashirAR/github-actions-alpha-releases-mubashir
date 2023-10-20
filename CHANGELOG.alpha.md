@@ -1,3 +1,69 @@
+# [1.7.0-eg-test.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.0-eg-test.1...v1.7.0-eg-test.2) (2023-09-29)
+
+
+### Bug Fixes
+
+* remove old tags ([14a942a](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/14a942a4794dbf1fc2230b77da7dc8c085616c08))
+
+# [1.7.0-eg-test.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.0...v1.7.0-eg-test.1) (2023-09-29)
+
+
+### Bug Fixes
+
+* allow all branches ([a18a817](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/a18a817958f6a3d9f32dc2625321d365c09e90d0))
+* asd ([38cf8f9](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/38cf8f9e40264310687496f6ba8251d4d2fac214))
+* important fix ([5dbdd11](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/5dbdd11e212d21e450fab155e85ddd86e6a19d49))
+* issues ([8ac9cc0](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/8ac9cc0238ab9303b8e6ca383a32e9e9e61b51e0))
+* release ([1ead875](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/1ead875aae3163576be47a8bbc24b4f1c4f3c287))
+* run after ([d64cbc6](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/d64cbc6e79e2f8269f436da2f25cb0f6ce0953ef))
+* run after again ([9b2a221](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/9b2a22144da3743a296f8c186352bf782f3a8163))
+* trye ([6b466bd](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/6b466bd8a6ca8ced5208d10b5e6f7e3345bd26d5))
+* workdlow ([e751ec0](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/e751ec03b9a8204fbc800a9a85b653e095e1d6d7))
+* workflow flow ([b6ee402](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/b6ee402827a82cd52d0ba6f017888859b90c2480))
+
+
+### Features
+
+* MY imp feat ([2213cd5](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/2213cd563e5b6efb6250b3a913cb90aae60639db))
+* MY imp feat ([a06ef36](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/a06ef36a0e8037d9e33c85cb96e6932a1bc759ca))
+* new feature ([afef704](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/afef704ea1a7ff787475e3c78a87c6b80c1ff795))
+* something ([846bc50](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/846bc509bedcdbe93b87d7a782baa9a83cd288ee))
+
+## [1.6.1-chore-something-eg-123.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.0...v1.6.1-chore-something-eg-123.1) (2023-09-29)
+
+
+### Bug Fixes
+
+* allow all branches ([a18a817](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/a18a817958f6a3d9f32dc2625321d365c09e90d0))
+* asd ([38cf8f9](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/38cf8f9e40264310687496f6ba8251d4d2fac214))
+* important fix ([5dbdd11](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/5dbdd11e212d21e450fab155e85ddd86e6a19d49))
+* release ([1ead875](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/1ead875aae3163576be47a8bbc24b4f1c4f3c287))
+* trye ([6b466bd](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/6b466bd8a6ca8ced5208d10b5e6f7e3345bd26d5))
+* workdlow ([e751ec0](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/e751ec03b9a8204fbc800a9a85b653e095e1d6d7))
+* workflow flow ([b6ee402](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/b6ee402827a82cd52d0ba6f017888859b90c2480))
+
+## [1.6.1-alpha.3](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.1-alpha.2...v1.6.1-alpha.3) (2023-09-29)
+
+
+### Bug Fixes
+
+* important fix ([5dbdd11](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/5dbdd11e212d21e450fab155e85ddd86e6a19d49))
+
+## [1.6.1-alpha.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.1-alpha.1...v1.6.1-alpha.2) (2023-09-29)
+
+
+### Bug Fixes
+
+* asd ([38cf8f9](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/38cf8f9e40264310687496f6ba8251d4d2fac214))
+
+## [1.6.1-alpha.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.0...v1.6.1-alpha.1) (2023-09-29)
+
+
+### Bug Fixes
+
+* workdlow ([e751ec0](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/e751ec03b9a8204fbc800a9a85b653e095e1d6d7))
+* workflow flow ([b6ee402](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/b6ee402827a82cd52d0ba6f017888859b90c2480))
+
 ## [1.5.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.5.0...v1.5.1) (2023-09-29)
 
 
