@@ -25,6 +25,9 @@ jobs:
         run: git branch
         env:
           version: '${{ github.ref_name }}'
+      
+      - name: trst
+        run: echo ${{ steps.get_tag.outputs.tag_name }}
 
       - name: Get tag
         id: get_tag
@@ -32,11 +35,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          tag: '1.2.3'
-      
-      - name: trst
-        run: echo ${{ steps.get_tag.outputs.tag_name }}
-
+          tag: ${{ steps.get_tag.outputs.tag_name }}
       # - name: Set up Node.js
       #   uses: actions/setup-node@v2
       #   with:
