@@ -32,7 +32,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          prerelease: true
+          prerelease: false
           releaseNameRegEx: '[\s\S]*${{ github.ref_name }}[\s\S]*'
       
       - name: trst
