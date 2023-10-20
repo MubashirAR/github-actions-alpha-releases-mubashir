@@ -28,12 +28,10 @@ jobs:
 
       - name: Get tag
         id: get_tag
-        uses: cardinalby/git-get-release-action@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+        uses: olegtarasov/get-tag@v2.1.2
         with:
-          prerelease: false
-          releaseNameRegEx: '[\s\S]*${{ github.ref_name }}[\s\S]*'
+          tagRegex: '[\s\S]*${{ github.ref_name }}[\s\S]*'  # Optional. Returns specified group text as tag name. Full tag string is returned if regex is not defined.
+          tagRegexGroup: 1 # Optional. Default is 1.
       
       - name: trst
         run: echo ${{ steps.get_tag.outputs.tag_name }}
