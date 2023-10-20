@@ -33,7 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           prerelease: true
-          releaseNameRegEx: ${{ github.ref_name }}
+          releaseNameRegEx: '*${{ github.ref_name }}*'
       
       - name: trst
         run: echo ${{ steps.get_tag.outputs.tag_name }}
