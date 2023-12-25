@@ -30,7 +30,7 @@ jobs:
 
       - name: Get tag
         id: get_tag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
+        uses: olegtarasov/get-tag@v2.1.2
         # with:
         #   tagRegex: '(.*)-eg-(.*)'  # Optional. Returns specified group text as tag name. Full tag string is returned if regex is not defined.
         #   tagRegexGroup: 1 # Optional. Default is 1.
