@@ -33,7 +33,7 @@ jobs:
         uses: oprypin/find-latest-tag@v1
         with:
           repository: ${{ github.repository }}
-          regex: '(.*)-eg-(.*)'
+          regex: '(.*)${{ github.ref_name}}(.*)'
         #   tagRegex: '(.*)-eg-(.*)'  # Optional. Returns specified group text as tag name. Full tag string is returned if regex is not defined.
         #   tagRegexGroup: 1 # Optional. Default is 1.
       
