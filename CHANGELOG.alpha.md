@@ -1,3 +1,43 @@
+# [1.7.0-eg-test.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.0...v1.7.0-eg-test.1) (2023-12-25)
+
+
+### Bug Fixes
+
+* allow all branches ([a18a817](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/a18a817958f6a3d9f32dc2625321d365c09e90d0))
+* asd ([38cf8f9](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/38cf8f9e40264310687496f6ba8251d4d2fac214))
+* branch name ([33f8c8a](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/33f8c8a0d6f9b4cbb8a8d5af1da1c2a10506e42b))
+* branch name ([8a2a0fb](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/8a2a0fb230cac6ef2bdbc924eb3f566685887b7c))
+* branch name ([ea4d567](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/ea4d567c58bf17873d597400c9761be7558e079a))
+* branch name ([cf73e3f](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/cf73e3fb167d9dd859960af2a80bc5da5b25b1e4))
+* branch name ([750be24](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/750be249f7a4ff85b0ff830f174f278044dbe023))
+* branch name ([c1280f4](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/c1280f446074c075a64f8bdf525c6c5c88cf2f1a))
+* branch name ([24c7334](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/24c73345694055448acca5c8396d824e30625972))
+* important fix ([5dbdd11](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/5dbdd11e212d21e450fab155e85ddd86e6a19d49))
+* issues ([8ac9cc0](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/8ac9cc0238ab9303b8e6ca383a32e9e9e61b51e0))
+* release ([1ead875](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/1ead875aae3163576be47a8bbc24b4f1c4f3c287))
+* remove old tags ([14a942a](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/14a942a4794dbf1fc2230b77da7dc8c085616c08))
+* run after ([d64cbc6](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/d64cbc6e79e2f8269f436da2f25cb0f6ce0953ef))
+* run after again ([9b2a221](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/9b2a22144da3743a296f8c186352bf782f3a8163))
+* trye ([6b466bd](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/6b466bd8a6ca8ced5208d10b5e6f7e3345bd26d5))
+* use another lib ([6ecf42d](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/6ecf42d5b638c1990548b700a91f8f2a10181db6))
+* use another lib ([7d435b5](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/7d435b52e1ed223fa47bcf033878ebedbd1a02eb))
+* use another lib ([42e9135](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/42e9135b2bb3e2b220127a0d7c567029e04df28b))
+* use previous lib ([d5f9931](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/d5f9931289ffb8ffd28865d09864c667fb011a90))
+* use previous lib ([e6e493a](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/e6e493a168c9e23a69596c8a82ad32984175f958))
+* use previous lib ([1495c2f](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/1495c2fef323b766ee61b0d932d4cef33ca61af7))
+* use previous lib ([5fca5a4](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/5fca5a4a2b0db04e59b52f9620741d9df9b587eb))
+* use previous lib ([d31d11e](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/d31d11e10324b04861180f7bf87969fc97b53dab))
+* workdlow ([e751ec0](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/e751ec03b9a8204fbc800a9a85b653e095e1d6d7))
+* workflow flow ([b6ee402](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/b6ee402827a82cd52d0ba6f017888859b90c2480))
+
+
+### Features
+
+* MY imp feat ([2213cd5](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/2213cd563e5b6efb6250b3a913cb90aae60639db))
+* MY imp feat ([a06ef36](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/a06ef36a0e8037d9e33c85cb96e6932a1bc759ca))
+* new feature ([afef704](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/afef704ea1a7ff787475e3c78a87c6b80c1ff795))
+* something ([846bc50](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/846bc509bedcdbe93b87d7a782baa9a83cd288ee))
+
 # [1.7.0-eg-test.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.0-eg-test.1...v1.7.0-eg-test.2) (2023-09-29)
 
 
