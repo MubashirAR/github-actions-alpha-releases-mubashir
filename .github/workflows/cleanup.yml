@@ -41,7 +41,7 @@ jobs:
       - name: "merge branch"
         id: merge_branch
         # run: echo "{merge_branch}={$RECENT_MERGED_BRANCH_NAME}" >> $GITHUB_OUTPUT
-        run: echo "merge_branch={RECENT_MERGED_BRANCH_NAME}" >> $GITHUB_OUTPUT
+        run: echo "merge_branch=$RECENT_MERGED_BRANCH_NAME" >> $GITHUB_OUTPUT
       - name: trst
         run: echo ${{ steps.merge_branch.outputs.merge_branch }}
 
