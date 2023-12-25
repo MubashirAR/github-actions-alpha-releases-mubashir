@@ -39,8 +39,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: $GITHUB_REF_NAME
         run: npx semantic-release
-  cleanup:
-    needs: release
-    uses: ./.github/workflows/cleanup.yml
-    with:
-      min-version-to-keep: 1
+  # cleanup:
+  #   needs: release
+  #   uses: ./.github/workflows/cleanup.yml
+  #   with:
+  #     min-version-to-keep: 1
