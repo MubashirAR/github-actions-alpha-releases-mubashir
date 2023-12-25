@@ -29,12 +29,12 @@ jobs:
       - name: Get tag
         id: get_tag
         uses: olegtarasov/get-tag@v2.1.2
-        with:
-          tagRegex: '(?<package>.*)-(?<version>.*)'  # Optional. Returns specified group text as tag name. Full tag string is returned if regex is not defined.
+        # with:
+        #   tagRegex: '(.*)-eg-(.*)'  # Optional. Returns specified group text as tag name. Full tag string is returned if regex is not defined.
         #   tagRegexGroup: 1 # Optional. Default is 1.
       
       - name: trst
-        run: echo ${{ steps.get_tag.outputs.package }}
+        run: echo ${{ steps.get_tag.outputs.tag }}
 
       # - uses: ClementTsang/delete-tag-and-release@v0.3.1
       #   with:
