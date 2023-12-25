@@ -40,7 +40,8 @@ jobs:
       #   #   tagRegexGroup: 1 # Optional. Default is 1.
       - name: "merge branch"
         id: merge_branch
-        run: echo "{merge_branch}={$RECENT_MERGED_BRANCH_NAME}" >> $GITHUB_OUTPUsT
+        # run: echo "{merge_branch}={$RECENT_MERGED_BRANCH_NAME}" >> $GITHUB_OUTPUT
+        run: echo "{merge_branch}={hello}" >> $GITHUB_OUTPUT
       - name: trst
         run: echo '${{ steps.get_tag.outputs.tag }} ${{ steps.merge_branch.outputs.merge_branch }}'
 
