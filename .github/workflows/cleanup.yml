@@ -36,16 +36,27 @@ jobs:
           regex: '(.*)${{ github.ref_name}}(.*)'
         #   tagRegex: '(.*)-eg-(.*)'  # Optional. Returns specified group text as tag name. Full tag string is returned if regex is not defined.
         #   tagRegexGroup: 1 # Optional. Default is 1.
-      
+      - name: "merge branch"
+        id: merge_branch
+        run: echo "::set-output name=merge_branch::$RECENT_MERGED_BRANCH_NAME"
       - name: trst
-        run: echo ${{ steps.get_tag.outputs.tag }}
+        run: echo '${{ steps.get_tag.outputs.tag }} ${{ steps.merge_branch.outputs.merge_branch }}'
 
-      - uses: ClementTsang/delete-tag-and-release@v0.3.1
-        with:
-          # delete_release: true # default: false
-          tag_name: '(.*)${{ github.ref_name}}(.*)' # tag name to delete
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - uses: jay2610/delete-older-releases@1.0.0
+      #   with:
+      #     # repo: <owner>/<repoName> # defaults to current repo
+      #     keep_latest: 0
+      #     delete_tag_pattern: ${{ steps.get_tag.outputs.tag }} # defaults to ""
+      #     # delete_type: 'release'
+      #     # target_branch: 'master'
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - uses: ClementTsang/delete-tag-and-release@v0.3.1
+      #   with:
+      #     # delete_release: true # default: false
+      #     tag_name: '(.*)${{ github.ref_name}}(.*)' # tag name to delete
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Set up Node.js
       #   uses: actions/setup-node@v2
