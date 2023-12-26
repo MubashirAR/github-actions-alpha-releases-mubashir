@@ -85,5 +85,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   check:
     needs: cleanup
-    if: ${{ inputs.min-version-to-keep }} == 0
+    if: ${{ inputs.min-version-to-keep }} != 0
     uses: ./.github/workflows/fail.yml
