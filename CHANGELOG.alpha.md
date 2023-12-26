@@ -1,3 +1,10 @@
+# [1.7.0-eg-test.5](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.0-eg-test.4...v1.7.0-eg-test.5) (2023-12-26)
+
+
+### Bug Fixes
+
+* tags version 3 ([d02c72e](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/d02c72e38335fd1f580a23d6778e74d2e9b9cad7))
+
 # [1.7.0-eg-test.4](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.0-eg-test.3...v1.7.0-eg-test.4) (2023-12-26)
 
 
