@@ -1,0 +1,12 @@
+name: Cleanup required
+
+on:
+  workflow_call:
+
+
+jobs:
+  cleanup-required:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Check prerelease cleanup
+          run: echo "Run cleanup to merge" && exit 1
