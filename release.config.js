@@ -19,10 +19,10 @@ const config = {
         assets: [prereleaseChangelog].filter((p) => p),
       },
     ],
-  ],
+    ["@semantic-release/github", { branch: "master" }]
+  ]
 };
 
-if (!prerelease) {
-  ["@semantic-release/github", { branch: "master" }];
-}
+// if (!prerelease) {
+// }
 module.exports = config;
