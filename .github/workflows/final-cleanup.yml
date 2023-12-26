@@ -9,9 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: first
-        run: echo "Cleaning up all pre-releases"
+        run: echo "Cleaning up all pre-releases" && echo ${{ github.event.comment.html_url }} && echo contains(github.event.comment.html_url, '/cleanup')
   cleanup:
     if: contains(github.event.comment.html_url, '/cleanup')
     needs: init
     uses: ./.github/workflows/cleanup.yml
-  
