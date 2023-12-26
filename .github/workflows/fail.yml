@@ -10,11 +10,3 @@ jobs:
     steps:
         - name: Check prerelease cleanup
           run: echo "Run cleanup to merge" && exit 1
-        - name: Run the action # You would run your tests before this using the output to set state/desc
-          uses: billyjbryant/create-status-check
-          with:
-            authToken: ${{secrets.GITHUB_TOKEN}}
-            context: 'Test run'
-            description: 'Passed'
-            state: 'success'
-            sha: ${{github.event.pull_request.head.sha || github.sha}}
