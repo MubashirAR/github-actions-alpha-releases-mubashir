@@ -66,15 +66,15 @@ jobs:
       #   with:
       #     node-version: 14
 
-      # - name: Cleanup Packages
-      #   uses: actions/delete-package-versions@v4
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     package-name: 'github-actions-alpha-releases-mubashir'
-      #     package-type: 'npm'
-      #     # IGNORE anything that does NOT include the branch name (delete only ones containing the branch name)
-      #     ignore-versions: '^(?!.*${{ github.ref_name }}).*'
-      #     min-versions-to-keep: ${{ inputs.min-version-to-keep }}
+      - name: Cleanup Packages
+        uses: actions/delete-package-versions@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          package-name: 'github-actions-alpha-releases-mubashir'
+          package-type: 'npm'
+          # IGNORE anything that does NOT include the branch name (delete only ones containing the branch name)
+          ignore-versions: '^(?!.*${{ github.ref_name }}).*'
+          min-versions-to-keep: ${{ inputs.min-version-to-keep }}
       - name: Cleanup Tags
         uses: dev-drprasad/delete-older-releases@v0.2.1
         with:
