@@ -75,7 +75,6 @@ jobs:
       #     # IGNORE anything that does NOT include the branch name (delete only ones containing the branch name)
       #     ignore-versions: '^(?!.*${{ github.ref_name }}).*'
       #     min-versions-to-keep: ${{ inputs.min-version-to-keep }}
-
       - name: Cleanup Tags
         if: ${{ inputs.min-version-to-keep }} == 0
         uses: dev-drprasad/delete-older-releases@v0.2.1
