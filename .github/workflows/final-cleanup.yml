@@ -1,0 +1,16 @@
+name: Final Cleanup
+
+on: 
+  issue_comment:                                     
+      types: 
+      - created
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first
+        run: echo "Cleaning up all pre-releases"
+  cleanup:
+    if: contains(github.event.comment.html_url, '/cleanup')
+    needs: init
+    uses: ./.github/workflows/cleanup.yml
