@@ -1,3 +1,11 @@
+# [1.7.0-eg-test.8](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.0-eg-test.7...v1.7.0-eg-test.8) (2023-12-26)
+
+
+### Bug Fixes
+
+* error throw ([db2d10c](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/db2d10c9c4261da85240a14c04b4797ac5bf43c0))
+* error throw ([686aa9c](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/686aa9c2f18b63bc66f10f7d9a3469e20b966b15))
+
 # [1.7.0-eg-test.7](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.0-eg-test.6...v1.7.0-eg-test.7) (2023-12-26)
 
 
