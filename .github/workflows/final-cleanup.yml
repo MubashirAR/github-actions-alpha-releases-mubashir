@@ -14,4 +14,3 @@ jobs:
     if: contains(github.event.comment.html_url, '/cleanup')
     needs: init
     uses: ./.github/workflows/cleanup.yml
-  
