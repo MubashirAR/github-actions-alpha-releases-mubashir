@@ -2,14 +2,14 @@ name: Cleanup
 
 on: 
   workflow_dispatch:
-  # workflow_call:
-  #   inputs:
-  #     min-version-to-keep:
-  #       type: number
-  #       default: 0
-  push:
-    branches:
-      - master
+  workflow_call:
+    inputs:
+      min-version-to-keep:
+        type: number
+        default: 0
+  # push:
+  #   branches:
+  #     - master
 #   pull_request:
 #     types: 
 #       closed
@@ -38,12 +38,12 @@ jobs:
       #     regex: '(.*)${{ github.ref_name}}(.*)'
       #   #   tagRegex: '(.*)-eg-(.*)'  # Optional. Returns specified group text as tag name. Full tag string is returned if regex is not defined.
       #   #   tagRegexGroup: 1 # Optional. Default is 1.
-      - name: "merge branch"
-        id: merge_branch
-        # run: echo "{merge_branch}={$RECENT_MERGED_BRANCH_NAME}" >> $GITHUB_OUTPUT
-        run: echo "merge_branch=$RECENT_MERGED_BRANCH_NAME" >> $GITHUB_OUTPUT && echo $GITHUB_OUTPUT && echo $RECENT_MERGED_BRANCH_NAME && echo jello
-      - name: trst
-        run: echo ${{ steps.merge_branch.outputs.merge_branch }}
+      # - name: "merge branch"
+      #   id: merge_branch
+      #   # run: echo "{merge_branch}={$RECENT_MERGED_BRANCH_NAME}" >> $GITHUB_OUTPUT
+      #   run: echo "merge_branch=$RECENT_MERGED_BRANCH_NAME" >> $GITHUB_OUTPUT && echo $GITHUB_OUTPUT && echo $RECENT_MERGED_BRANCH_NAME && echo jello
+      # - name: trst
+      #   run: echo ${{ steps.merge_branch.outputs.merge_branch }}
 
       # - uses: jay2610/delete-older-releases@1.0.0
       #   with:
@@ -76,11 +76,12 @@ jobs:
       #     ignore-versions: '^(?!.*${{ github.ref_name }}).*'
       #     min-versions-to-keep: ${{ inputs.min-version-to-keep }}
 
-      # - name: Cleanup Tags
-      #   if: ${{ inputs.min-version-to-keep }} == 0
-      #   uses: dev-drprasad/delete-older-releases@v0.2.1
-      #   with:
-      #     keep_latest: 1
-      #     delete_tag_pattern: '${{ github.ref_name }}'
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Cleanup Tags
+        if: ${{ inputs.min-version-to-keep }} == 0
+        uses: dev-drprasad/delete-older-releases@v0.2.1
+        with:
+          keep_latest: 1
+          delete_tag_pattern: '${{ github.ref_name }}'
+          delete_tags: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
