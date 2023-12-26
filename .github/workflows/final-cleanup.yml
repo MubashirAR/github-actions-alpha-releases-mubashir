@@ -1,7 +1,7 @@
 name: Final Cleanup
 
 on: 
-  pull_request_comment:                                      
+  issue_comment:                                      
       types: 
       - created
 jobs:
