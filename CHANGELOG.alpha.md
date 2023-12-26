@@ -1,3 +1,21 @@
+# [1.7.0-eg-test.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.0-eg-test.1...v1.7.0-eg-test.2) (2023-12-26)
+
+
+### Bug Fixes
+
+* use old one ([a8b4009](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/a8b4009403901f72a8a16ca5cc320682c5081552))
+* use previous lib ([6049ec6](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/6049ec637c79f15a02df235bd215815cfcbd0081))
+* use previous lib ([93ec933](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/93ec933de37832a2d0f766f68f24fb941bc171dc))
+* use previous lib ([f05f918](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/f05f9189b742e1f163e03ad7cb82e31a7d98100a))
+* use previous lib ([e2c7a2a](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/e2c7a2af2420c1906f86880a65f9f0313144d5d8))
+* use previous lib ([fa58b37](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/fa58b370dbf03ecb4719b558fda781addedad6b5))
+* use previous lib ([57738e0](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/57738e071a599ff1491c9df2f2e95d495418d779))
+* use previous lib ([2975a25](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/2975a254de75f5784eef8eba5a48c678403c09fa))
+* use previous lib ([36f825d](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/36f825d9ce533a4c6a125a4678cef461091563e8))
+* use previous lib ([7021a3d](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/7021a3df1f85687a8f3fafbb055af925cf138488))
+* use previous lib ([01d2cdb](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/01d2cdbbd8080848ec9d6049f02f02fff0d6c13b))
+* use previous lib ([1e6fea2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/1e6fea2e96f1d28896398ef71d484645a28107f4))
+
 # [1.7.0-eg-test.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.0...v1.7.0-eg-test.1) (2023-12-25)
 
 
