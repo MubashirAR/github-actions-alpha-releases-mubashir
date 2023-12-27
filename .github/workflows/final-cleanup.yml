@@ -20,6 +20,8 @@ jobs:
     needs: init
     uses: ./.github/workflows/cleanup.yml
   check-cleanup:
+    needs: cleanup
+    if: always()
     uses: ./.github/workflows/fail.yml
     with:
       is-final: true
