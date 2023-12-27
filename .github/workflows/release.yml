@@ -2,12 +2,12 @@ name: Semantic Release
 
 
 on: 
-  workflow_dispatch:
   pull_request: 
     types: 
       - opened
       - reopened
       - synchronize
+  workflow_dispatch:
 # on:
 #   workflow_run:
 #     workflows: [cleanup]
