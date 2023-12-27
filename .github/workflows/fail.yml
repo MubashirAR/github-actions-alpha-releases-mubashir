@@ -24,6 +24,6 @@ jobs:
         if: ${{ steps.get_tag.outputs.tag }}
         run: |
           echo "ERROR: Run full cleanup to merge"
-          echo "Found tag ${{ github.head_ref }}"
+          echo "Found tag ${{ steps.get_tag.outputs.tag }}"
           echo "To run full cleanup, comment /cleanup on your PR"
           exit 1
