@@ -9,4 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: Check prerelease cleanup
-          run: echo "Run cleanup to merge" && exit 1
+          run: |
+            echo "ERROR: Run full cleanup to merge"
+            echo "To run full cleanup, comment /cleanup on your PR"
+            exit 1

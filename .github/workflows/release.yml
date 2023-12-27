@@ -8,7 +8,11 @@ on:
 #     workflows: [cleanup]
 #     types: 
 #       - completed
-#   # push:
+  pull_request: 
+    types: 
+      - opened
+      - reopened
+      - synchronize
 #     branches:
 #       - alpha
 #       - master
