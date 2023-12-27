@@ -28,7 +28,7 @@ jobs:
       - name: trst
         run: git branch
         env:
-          version: '${{ github.ref_name }}'
+          version: '${{ github.head_ref }}'
 
       # - name: Get tag
       #   id: get_tag
