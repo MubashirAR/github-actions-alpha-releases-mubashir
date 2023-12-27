@@ -33,7 +33,7 @@ jobs:
       - name: trst
         run: git branch
         env:
-          version: '${{ github.head_ref }}'
+          version: '${{ steps.comment-branch.outputs.head_ref }}'
 
       # - name: Get tag
       #   id: get_tag
