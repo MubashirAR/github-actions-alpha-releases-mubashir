@@ -11,8 +11,15 @@ jobs:
   cleanup-required:
     runs-on: ubuntu-latest
     steps:
-        - name: Check prerelease cleanup
-          run: |
-            echo "ERROR: Run full cleanup to merge"
-            echo "To run full cleanup, comment /cleanup on your PR"
-            exit 1
+      - name: Get tag
+        id: get_tag
+        uses: oprypin/find-latest-tag@v1
+        with:
+          repository: ${{ github.repository }}
+          regex: '(.*)${{ github.ref_name}}(.*)'
+      - name: Check prerelease cleanup
+        if: ${{ steps.get_tag.outputs.tag }}
+        run: |
+          echo "ERROR: Run full cleanup to merge"
+          echo "To run full cleanup, comment /cleanup on your PR"
+          exit 1
