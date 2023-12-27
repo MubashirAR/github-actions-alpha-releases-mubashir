@@ -16,13 +16,14 @@ jobs:
           echo ${{ github.ref_name }}
           echo ${{ github.ref }}
           echo ${{ github.sha }}
+          echo ${{ github.base_ref }}
       - name: Get tag
         id: get_tag
         uses: oprypin/find-latest-tag@v1
         continue-on-error: true
         with:
           repository: ${{ github.repository }}
-          regex: '(.*)${{ github.ref_name }}(.*)'
+          regex: '(.*)${{ github.base_ref }}(.*)'
       - name: Check prerelease cleanup
         if: ${{ steps.get_tag.outputs.tag }}
         run: |
