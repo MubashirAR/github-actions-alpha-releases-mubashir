@@ -1,4 +1,4 @@
-name: Cleanup required
+name: Pre-release cleanup check
 
 on:
   pull_request: 
@@ -8,16 +8,21 @@ on:
         - synchronize
 
 jobs:
-  cleanup-required:
+  prerelease-cleanup-check:
     runs-on: ubuntu-latest
     steps:
+      - name: Check ref name
+        run: |
+          echo ${{ github.ref_name }}
+          echo ${{ github.ref }}
+          echo ${{ github.sha }}
       - name: Get tag
         id: get_tag
         uses: oprypin/find-latest-tag@v1
         continue-on-error: true
         with:
           repository: ${{ github.repository }}
-          regex: '(.*)${{ github.ref_name}}(.*)'
+          regex: '(.*)${{ github.ref_name }}(.*)'
       - name: Check prerelease cleanup
         if: ${{ steps.get_tag.outputs.tag }}
         run: |
