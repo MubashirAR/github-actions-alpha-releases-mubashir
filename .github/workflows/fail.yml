@@ -1,8 +1,11 @@
 name: Cleanup required
 
 on:
-  workflow_call:
-
+  pull_request: 
+      types: 
+        - opened
+        - reopened
+        - synchronize
 
 jobs:
   cleanup-required:

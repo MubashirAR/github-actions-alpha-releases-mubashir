@@ -83,7 +83,7 @@ jobs:
           delete_tags: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  check:
-    needs: cleanup
-    if: '! ${{ inputs.min-version-to-keep == 0 }}'
-    uses: ./.github/workflows/fail.yml
+  # check:
+  #   needs: cleanup
+  #   if: '! ${{ inputs.min-version-to-keep == 0 }}'
+  #   uses: ./.github/workflows/fail.yml
