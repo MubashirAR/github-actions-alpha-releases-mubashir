@@ -20,15 +20,20 @@ jobs:
   cleanup:
     runs-on: ubuntu-latest
     steps:
+      - name: Get PR branch
+        uses: xt0rted/pull-request-comment-branch@v1
+        id: comment-branch
+
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          ref: ${{ steps.comment-branch.outputs.head_ref }}
 
       - name: trst
         run: git branch
         env:
-          version: '${{ github.ref_name }}'
+          version: '${{ github.head_ref }}'
 
       # - name: Get tag
       #   id: get_tag
