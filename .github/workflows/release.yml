@@ -2,17 +2,17 @@ name: Semantic Release
 
 
 on: 
+  pull_request: 
+    types: 
+      - opened
+      - reopened
+      - synchronize
   workflow_dispatch:
 # on:
 #   workflow_run:
 #     workflows: [cleanup]
 #     types: 
 #       - completed
-  pull_request: 
-    types: 
-      - opened
-      - reopened
-      - synchronize
 #     branches:
 #       - alpha
 #       - master
