@@ -12,11 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check ref name
-        run: |
-          echo ${{ github.ref_name }}
-          echo ${{ github.ref }}
-          echo ${{ github.sha }}
-          echo ${{ github.head_ref }}
+        run: echo ${{ github.head_ref }}
       - name: Get tag
         id: get_tag
         uses: oprypin/find-latest-tag@v1
@@ -28,5 +24,6 @@ jobs:
         if: ${{ steps.get_tag.outputs.tag }}
         run: |
           echo "ERROR: Run full cleanup to merge"
+          echo "Found tag ${{ github.head_ref }}"
           echo "To run full cleanup, comment /cleanup on your PR"
           exit 1
