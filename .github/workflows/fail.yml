@@ -1,12 +1,15 @@
 name: Pre-release cleanup check
 
 on:
-  pull_request: 
-      types: 
-        - opened
-        - reopened
-        - synchronize
+  # pull_request: 
+  #   types: 
+  #     - opened
+  #     - reopened
+  #     - synchronize
   workflow_call:  
+    inputs:
+      is-final: 
+        type: boolean
 
 jobs:
   prerelease-cleanup-check:
@@ -14,6 +17,7 @@ jobs:
     steps:
       - name: Check ref name
         run: echo ${{ github.head_ref }}
+
       - name: Get tag
         id: get_tag
         uses: oprypin/find-latest-tag@v1
@@ -21,6 +25,7 @@ jobs:
         with:
           repository: ${{ github.repository }}
           regex: '(.*)${{ github.head_ref }}(.*)'
+ 
       - name: Check prerelease cleanup
         if: ${{ steps.get_tag.outputs.tag }}
         run: |
@@ -28,3 +33,16 @@ jobs:
           echo "Found tag ${{ steps.get_tag.outputs.tag }}"
           echo "To run full cleanup, comment /cleanup on your PR"
           exit 1
+
+      - name: Get PR branch
+        if: inputs.is-final
+        uses: xt0rted/pull-request-comment-branch@v1
+        id: comment-branch
+
+      - name: Set latest commit status as ${{ job.status }}
+        uses: myrotvorets/set-commit-status-action@master
+        if: steps.comment-branch.outputs.head_ref
+        with:
+          sha: ${{ steps.comment-branch.outputs.head_sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
