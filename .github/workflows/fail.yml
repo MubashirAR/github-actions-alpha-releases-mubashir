@@ -1,15 +1,30 @@
-name: Cleanup required
+name: Pre-release cleanup check
 
 on:
-  workflow_call:
-
+  pull_request: 
+      types: 
+        - opened
+        - reopened
+        - synchronize
+  workflow_call:  
 
 jobs:
-  cleanup-required:
+  prerelease-cleanup-check:
     runs-on: ubuntu-latest
     steps:
-        - name: Check prerelease cleanup
-          run: |
-            echo "ERROR: Run full cleanup to merge"
-            echo "To run full cleanup, comment /cleanup on your PR"
-            exit 1
+      - name: Check ref name
+        run: echo ${{ github.head_ref }}
+      - name: Get tag
+        id: get_tag
+        uses: oprypin/find-latest-tag@v1
+        continue-on-error: true
+        with:
+          repository: ${{ github.repository }}
+          regex: '(.*)${{ github.head_ref }}(.*)'
+      - name: Check prerelease cleanup
+        if: ${{ steps.get_tag.outputs.tag }}
+        run: |
+          echo "ERROR: Run full cleanup to merge"
+          echo "Found tag ${{ steps.get_tag.outputs.tag }}"
+          echo "To run full cleanup, comment /cleanup on your PR"
+          exit 1
