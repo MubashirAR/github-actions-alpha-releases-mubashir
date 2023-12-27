@@ -27,12 +27,16 @@ jobs:
           regex: '(.*)${{ github.head_ref }}(.*)'
  
       - name: Check prerelease cleanup
-        if: ${{ steps.get_tag.outputs.tag }}
+        if: ${{ steps.get_tag.outputs.tag }} & '! ${{ inputs.is-final }}'
         run: |
           echo "ERROR: Run full cleanup to merge"
           echo "Found tag ${{ steps.get_tag.outputs.tag }}"
           echo "To run full cleanup, comment /cleanup on your PR"
           exit 1
+
+      - name: cleanup
+        if: inputs.is-final
+        uses: ./.github/workflows/cleanup.yml
 
       - name: Get PR branch
         if: inputs.is-final
