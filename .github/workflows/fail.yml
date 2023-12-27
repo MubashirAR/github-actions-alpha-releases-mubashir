@@ -6,6 +6,8 @@ on:
   #     - opened
   #     - reopened
   #     - synchronize
+  workflow_run: 
+    workflows: semantic-release  
   workflow_call:  
     inputs:
       is-final: 
