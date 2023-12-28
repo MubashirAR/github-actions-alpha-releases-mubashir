@@ -17,7 +17,7 @@ jobs:
       - name: first
         run: echo "Cleaning up all pre-releases" && echo ${{ github.event.comment.body }} && echo ${{ contains(github.event.comment.body, '/cleanup') }}
   cleanup:
-    if: contains(github.event.comment.body, '/cleanup')
+    if: contains(github.event.comment.body, '/cleanup') || contains(github.event_name, 'workflow_dispatch')
     needs: init
     uses: ./.github/workflows/cleanup.yml
   check-cleanup:
