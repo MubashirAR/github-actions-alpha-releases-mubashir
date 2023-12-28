@@ -23,6 +23,7 @@ jobs:
       - name: Get PR branch
         uses: xt0rted/pull-request-comment-branch@v1
         id: comment-branch
+        continue-on-error: true
 
       - name: Checkout code
         uses: actions/checkout@v3
@@ -67,7 +68,7 @@ jobs:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Set up Node.js
-      #   uses: actions/setup-node@v2
+      #   uses: actions/setup-node@v3
       #   with:
       #     node-version: 14
 

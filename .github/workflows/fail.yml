@@ -6,6 +6,9 @@ on:
   #     - opened
   #     - reopened
   #     - synchronize
+  workflow_run:  
+    workflows: semantic-release  
+    types: completed
   workflow_call:  
     inputs:
       is-final: 
@@ -15,8 +18,16 @@ jobs:
   prerelease-cleanup-check:
     runs-on: ubuntu-latest
     steps:
+      - name: Get PR branch
+        if: inputs.is-final
+        uses: xt0rted/pull-request-comment-branch@v1
+        id: comment-branch
+
       - name: Check ref name
-        run: echo ${{ github.head_ref }}
+        run: |
+          echo ${{ steps.comment-branch.outputs.head_ref }}
+          echo ${{ github.head_ref }}
+          echo ${{ steps.comment-branch.outputs.head_ref || github.head_ref }}
 
       - name: Get tag
         id: get_tag
@@ -24,7 +35,7 @@ jobs:
         continue-on-error: true
         with:
           repository: ${{ github.repository }}
-          regex: '(.*)${{ github.head_ref }}(.*)'
+          regex: '(.*)${{ steps.comment-branch.outputs.head_ref || github.head_ref }}(.*)'
  
       - name: Check prerelease cleanup
         if: ${{ steps.get_tag.outputs.tag }}
@@ -33,11 +44,6 @@ jobs:
           echo "Found tag ${{ steps.get_tag.outputs.tag }}"
           echo "To run full cleanup, comment /cleanup on your PR"
           exit 1
-
-      - name: Get PR branch
-        if: inputs.is-final
-        uses: xt0rted/pull-request-comment-branch@v1
-        id: comment-branch
 
       - name: Set latest commit status as ${{ job.status }}
         uses: myrotvorets/set-commit-status-action@master
