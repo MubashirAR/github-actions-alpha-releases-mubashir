@@ -13,6 +13,11 @@ jobs:
   init:
     runs-on: ubuntu-latest
     steps:
+      - name: Get PR branch
+        if: inputs.is-final
+        uses: xt0rted/pull-request-comment-branch@v1
+        id: comment-branch
+
       - name: first
         run: echo "Cleaning up all pre-releases" && echo ${{ github.event.comment.body }} && echo ${{ contains(github.event.comment.body, '/cleanup') }}
         
