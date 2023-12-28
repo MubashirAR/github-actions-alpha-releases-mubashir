@@ -13,29 +13,15 @@ jobs:
   init:
     runs-on: ubuntu-latest
     steps:
-      - name: Get PR branch
-        uses: xt0rted/pull-request-comment-branch@v1
-        id: comment-branch
-
       - name: first
         run: echo "Cleaning up all pre-releases" && echo ${{ github.event.comment.body }} && echo ${{ contains(github.event.comment.body, '/cleanup') }}
-        
-      - uses: actions/checkout@v3
-      # with:
-        #   fetch-depth: 0
-        #   repository: ${{ github.repository }}
-        #   ref: ${{ steps.comment-branch.outputs.head_ref }}
-        
-      - name: cleanup
-        if: contains(github.event.comment.body, '/cleanup')
-        uses: ./.github/workflows/cleanup.yml
-      - uses: actions/checkout@v3
-      - name: cleanup-check
-        # if: always()
-        uses: ./.github/workflows/fail.yml
-        with:
-          is-final: true
-
-  # cleanup:
-  #   needs: init
-  # check-cleanup:
+  cleanup:
+    if: contains(github.event.comment.body, '/cleanup')
+    needs: init
+    uses: ./.github/workflows/cleanup.yml
+  check-cleanup:
+    needs: cleanup
+    if: always()
+    uses: ./.github/workflows/fail.yml
+    with:
+      is-final: true
