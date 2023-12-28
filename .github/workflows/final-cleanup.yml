@@ -20,16 +20,16 @@ jobs:
       - name: first
         run: echo "Cleaning up all pre-releases" && echo ${{ github.event.comment.body }} && echo ${{ contains(github.event.comment.body, '/cleanup') }}
         
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          repository: ${{ github.repository }}
-          ref: ${{ steps.comment-branch.outputs.head_ref }}
-
+      - uses: actions/checkout@v3
+      # with:
+        #   fetch-depth: 0
+        #   repository: ${{ github.repository }}
+        #   ref: ${{ steps.comment-branch.outputs.head_ref }}
+        
       - name: cleanup
         if: contains(github.event.comment.body, '/cleanup')
         uses: ./.github/workflows/cleanup.yml
+      - uses: actions/checkout@v3
       - name: cleanup-check
         # if: always()
         uses: ./.github/workflows/fail.yml
