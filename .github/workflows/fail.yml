@@ -18,8 +18,13 @@ jobs:
   prerelease-cleanup-check:
     runs-on: ubuntu-latest
     steps:
+      - name: Get PR branch
+        if: inputs.is-final
+        uses: xt0rted/pull-request-comment-branch@v1
+        id: comment-branch
+
       - name: Check ref name
-        run: echo ${{ github.head_ref }}
+        run: echo ${{ steps.comment-branch.outputs.head_ref || github.head_ref }}
 
       - name: Get tag
         id: get_tag
@@ -36,11 +41,6 @@ jobs:
           echo "Found tag ${{ steps.get_tag.outputs.tag }}"
           echo "To run full cleanup, comment /cleanup on your PR"
           exit 1
-
-      - name: Get PR branch
-        if: inputs.is-final
-        uses: xt0rted/pull-request-comment-branch@v1
-        id: comment-branch
 
       - name: Set latest commit status as ${{ job.status }}
         uses: myrotvorets/set-commit-status-action@master
