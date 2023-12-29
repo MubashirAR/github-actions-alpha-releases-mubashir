@@ -72,20 +72,21 @@ jobs:
       #   with:
       #     node-version: 14
 
-      - name: Cleanup Packages
-        uses: actions/delete-package-versions@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          package-name: 'github-actions-alpha-releases-mubashir'
-          package-type: 'npm'
-          # IGNORE anything that does NOT include the branch name (delete only ones containing the branch name)
-          ignore-versions: '^(?!.*${{ steps.comment-branch.outputs.head_ref }}).*'
-          min-versions-to-keep: ${{ inputs.min-version-to-keep }}
-      - name: Cleanup Tags
-        uses: dev-drprasad/delete-older-releases@v0.2.1
-        with:
-          keep_latest: ${{ inputs.min-version-to-keep }}
-          delete_tag_pattern: '${{ steps.comment-branch.outputs.head_ref }}'
-          delete_tags: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # # USE THE FOLLOWING
+      # - name: Cleanup Packages
+      #   uses: actions/delete-package-versions@v4
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     package-name: 'github-actions-alpha-releases-mubashir'
+      #     package-type: 'npm'
+      #     # IGNORE anything that does NOT include the branch name (delete only ones containing the branch name)
+      #     ignore-versions: '^(?!.*${{ steps.comment-branch.outputs.head_ref }}).*'
+      #     min-versions-to-keep: ${{ inputs.min-version-to-keep }}
+      # - name: Cleanup Tags
+      #   uses: dev-drprasad/delete-older-releases@v0.2.1
+      #   with:
+      #     keep_latest: ${{ inputs.min-version-to-keep }}
+      #     delete_tag_pattern: '${{ steps.comment-branch.outputs.head_ref }}'
+      #     delete_tags: true
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
