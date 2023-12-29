@@ -48,7 +48,7 @@ jobs:
         continue-on-error: true
         with:
           repository: ${{ github.repository }}
-          regex: '(.*)${{ steps.comment-branch.outputs.head_ref || github.head_ref }}(.*)'
+          regex: '(.*)${{ steps.ref-name.outputs.pr_ref }}(.*)'
  
       - name: Check prerelease cleanup
         if: ${{ steps.get_tag.outputs.tag }}
