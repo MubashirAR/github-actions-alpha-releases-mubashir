@@ -41,26 +41,27 @@ jobs:
           echo 'ref_name: ${{ github.ref_name }}'
           echo 'step: ${{ steps.ref-name.outputs.pr_ref }}'
           echo 'comment: ${{ steps.comment-branch.outputs.head_ref || github.head_ref || github.ref_name }}'
-      # - name: Get tag
-      #   id: get_tag
-      #   uses: oprypin/find-latest-tag@v1
-      #   continue-on-error: true
-      #   with:
-      #     repository: ${{ github.repository }}
-      #     regex: '(.*)${{ steps.comment-branch.outputs.head_ref || github.head_ref }}(.*)'
- 
-      # - name: Check prerelease cleanup
-      #   if: ${{ steps.get_tag.outputs.tag }}
-      #   run: |
-      #     echo "ERROR: Run full cleanup to merge"
-      #     echo "Found tag ${{ steps.get_tag.outputs.tag }}"
-      #     echo "To run full cleanup, comment /cleanup on your PR"
-      #     exit 1
 
-      # - name: Set latest commit status as ${{ job.status }}
-      #   uses: myrotvorets/set-commit-status-action@master
-      #   if: steps.comment-branch.outputs.head_ref
-      #   with:
-      #     sha: ${{ steps.comment-branch.outputs.head_sha }}
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     status: ${{ job.status }}
+      - name: Get tag
+        id: get_tag
+        uses: oprypin/find-latest-tag@v1
+        continue-on-error: true
+        with:
+          repository: ${{ github.repository }}
+          regex: '(.*)${{ steps.ref-name.outputs.pr_ref }}(.*)'
+ 
+      - name: Check prerelease cleanup
+        if: ${{ steps.get_tag.outputs.tag }}
+        run: |
+          echo "ERROR: Run full cleanup to merge"
+          echo "Found tag ${{ steps.get_tag.outputs.tag }}"
+          echo "To run full cleanup, comment /cleanup on your PR"
+          exit 1
+
+      - name: Set latest commit status as ${{ job.status }}
+        uses: myrotvorets/set-commit-status-action@master
+        if: steps.comment-branch.outputs.head_ref
+        with:
+          sha: ${{ steps.comment-branch.outputs.head_sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
