@@ -30,13 +30,17 @@ jobs:
           repository: ${{ github.repository }}
           ref: ${{ steps.comment-branch.outputs.head_ref }}
 
+      - name: Get ref name
+        id: ref-name
+        run: echo "pr_ref=${{ steps.comment-branch.outputs.head_ref || github.head_ref || github.ref_name }}" >> "$GITHUB_OUTPUT"
+
       - name: Check ref name
         run: |
           echo 'comment: ${{ steps.comment-branch.outputs.head_ref }}'
           echo 'head_ref: ${{ github.head_ref }}'
           echo 'ref_name: ${{ github.ref_name }}'
+          echo 'step: ${{ steps.ref-name.outputs.pr_ref }}'
           echo 'comment: ${{ steps.comment-branch.outputs.head_ref || github.head_ref || github.ref_name }}'
-
       # - name: Get tag
       #   id: get_tag
       #   uses: oprypin/find-latest-tag@v1
