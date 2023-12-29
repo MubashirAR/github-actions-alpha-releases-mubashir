@@ -32,10 +32,10 @@ jobs:
 
       - name: Check ref name
         run: |
-          echo ${{ steps.comment-branch.outputs.head_ref }}
-          echo ${{ github.head_ref }}
-          echo ${{ github.ref_name }}
-          echo ${{ steps.comment-branch.outputs.head_ref || github.head_ref || github.ref_name }}
+          echo 'comment: ${{ steps.comment-branch.outputs.head_ref }}'
+          echo 'head_ref: ${{ github.head_ref }}'
+          echo 'ref_name: ${{ github.ref_name }}'
+          echo 'comment: ${{ steps.comment-branch.outputs.head_ref || github.head_ref || github.ref_name }}'
 
       # - name: Get tag
       #   id: get_tag
