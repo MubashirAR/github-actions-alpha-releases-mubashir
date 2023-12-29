@@ -30,7 +30,7 @@ jobs:
           repository: ${{ github.repository }}
           ref: ${{ steps.comment-branch.outputs.head_ref }}
 
-      - name: Check ref name
+      - name: Get ref name
         id: ref-name
         run: echo "pr_ref=${{ steps.comment-branch.outputs.head_ref || github.head_ref || github.ref_name }}" >> "$GITHUB_OUTPUT"
 
