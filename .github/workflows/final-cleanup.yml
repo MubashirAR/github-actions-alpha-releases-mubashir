@@ -9,6 +9,10 @@ on:
       - opened
       - reopened
       - synchronize
+  workflow_run: 
+    types: requested
+    branches-ignore: [master]
+    workflows: [release]
   workflow_dispatch: 
 jobs:
   init:
