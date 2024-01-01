@@ -19,7 +19,7 @@ const config = {
         assets: [prereleaseChangelog].filter((p) => p),
       },
     ],
-    ["@semantic-release/github", { branch: "master" }]
+    // ["@semantic-release/github", { branch: "master" }]
   ]
 };
 
