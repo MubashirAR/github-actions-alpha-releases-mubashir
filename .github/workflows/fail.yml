@@ -7,7 +7,7 @@ on:
   #     - reopened
   #     - synchronize
   workflow_run: 
-    types: completed
+    types: requested
     branches-ignore: [master]
     workflows: [Semantic Release]
 
