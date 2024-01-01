@@ -7,10 +7,11 @@ on:
   #     - reopened
   #     - synchronize
   workflow_run: 
-    types: requested
-    branches-ignore: master
+    types: 
+      - requested
+    # branches-ignore: master
     workflows: 
-      - Semantic Release
+      - "Semantic Release"
 
   workflow_call:  
     inputs:
