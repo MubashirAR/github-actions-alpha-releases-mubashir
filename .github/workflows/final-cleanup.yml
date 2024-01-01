@@ -12,7 +12,7 @@ on:
   workflow_run: 
     types: requested
     branches-ignore: [master]
-    workflows: [release]
+    workflows: [Semantic Release]
   workflow_dispatch: 
 jobs:
   init:
