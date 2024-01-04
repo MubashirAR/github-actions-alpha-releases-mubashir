@@ -6,11 +6,14 @@ on:
   #     - opened
   #     - reopened
   #     - synchronize
-  workflow_run: 
+  workflow_run:
+    workflows: [release]
     types: 
-      - requested
-    # branches-ignore: master
-    workflows: release
+      - completed
+    # branches:
+    #   - eg-*
+    #   - alpha
+    #   - master
 
   workflow_call:  
     inputs:
