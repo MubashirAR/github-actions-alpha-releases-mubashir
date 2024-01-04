@@ -6,9 +6,12 @@ on:
   #     - opened
   #     - reopened
   #     - synchronize
-  workflow_run:  
-    workflows: semantic-release  
-    types: completed
+  workflow_run: 
+    types: 
+      - requested
+    # branches-ignore: master
+    workflows: release
+
   workflow_call:  
     inputs:
       is-final: 
