@@ -6,15 +6,18 @@ on:
   #     - opened
   #     - reopened
   #     - synchronize
-  workflow_run: 
+  workflow_run:
+    workflows: [final-cleanup]
     types: 
-      - requested
-    # branches-ignore: master
-    workflows: release
+      - completed
+    # branches:
+    #   - eg-*
+    #   - alpha
+    #   - master
 
   workflow_call:  
     inputs:
-      is-final: 
+      is-comment: 
         type: boolean
 
 jobs:
@@ -22,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get PR branch
-        if: inputs.is-final
+        if: inputs.is-comment
         uses: xt0rted/pull-request-comment-branch@v1
         id: comment-branch
 
