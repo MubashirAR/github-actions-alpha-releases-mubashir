@@ -1,9 +1,9 @@
-name: Final Cleanup
+name: Commands
 
 on: 
-  # issue_comment:                                      
-  #     types: 
-  #     - created
+  issue_comment:                                      
+      types: 
+      - created
   # pull_request: 
   #   types: 
   #     - opened
@@ -16,15 +16,16 @@ jobs:
     steps:
       - name: first
         run: echo "Cleaning up all pre-releases" && echo ${{ github.event.comment.body }} && echo ${{ contains(github.event.comment.body, '/cleanup') }}
+  release:
+    if: contains(github.event.comment.body, '/release')
+    needs: init
+    uses: ./.github/workflows/release.yml
   cleanup:
-    if: contains(github.event.comment.body, '/cleanup') || contains(github.event_name, 'workflow_dispatch')
+    if: contains(github.event.comment.body, '/cleanup')
     needs: init
     uses: ./.github/workflows/cleanup.yml
   check-cleanup:
-    needs: cleanup
-    if: always()
     uses: ./.github/workflows/fail.yml
     with:
-      is-comment: false
-      # is-comment: ${{ contains(github.event.comment.body, '/cleanup') }}
+      is-comment: true
  

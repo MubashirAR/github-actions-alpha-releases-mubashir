@@ -17,7 +17,7 @@ on:
 
   workflow_call:  
     inputs:
-      is-final: 
+      is-comment: 
         type: boolean
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get PR branch
-        if: inputs.is-final
+        if: inputs.is-comment
         uses: xt0rted/pull-request-comment-branch@v1
         id: comment-branch
 
