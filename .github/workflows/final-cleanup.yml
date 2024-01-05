@@ -27,4 +27,3 @@ jobs:
     with:
       is-comment: false
       # is-comment: ${{ contains(github.event.comment.body, '/cleanup') }}
- 
