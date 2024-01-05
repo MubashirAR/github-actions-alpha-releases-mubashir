@@ -13,6 +13,8 @@ on:
 jobs:
   init:
     runs-on: ubuntu-latest
+    outputs:
+      PR_REF: ${{ env.pr_ref }}
     steps:
       - name: first
         run: echo "Cleaning up all pre-releases" && echo ${{ github.event.comment.body }} && echo ${{ contains(github.event.comment.body, '/cleanup') }}
@@ -27,7 +29,7 @@ jobs:
     needs: init
     uses: ./.github/workflows/release.yml
     with:
-      COMMENT_REF: ${{ needs.init.outputs.pr_ref }}
+      COMMENT_REF: ${{ needs.init.outputs.PR_REF }}
   cleanup:
     if: contains(github.event.comment.body, '/cleanup')
     needs: init
