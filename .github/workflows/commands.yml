@@ -37,6 +37,12 @@ jobs:
     needs: init
     uses: ./.github/workflows/cleanup.yml
   check-cleanup:
+    needs: release
+    uses: ./.github/workflows/fail.yml
+    with:
+      is-comment: true
+  check-cleanup-final:
+    needs: cleanup
     uses: ./.github/workflows/fail.yml
     with:
       is-comment: true
