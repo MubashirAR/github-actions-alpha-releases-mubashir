@@ -66,8 +66,8 @@ jobs:
 
       - name: Set latest commit status as ${{ job.status }}
         uses: myrotvorets/set-commit-status-action@master
-        if: steps.comment-branch.outputs.head_ref
+        if: steps.comment-branch.outputs.head_sha || github.sha
         with:
-          sha: ${{ steps.comment-branch.outputs.head_sha }}
+          sha: ${{ steps.comment-branch.outputs.head_sha || github.sha }}
           token: ${{ secrets.GITHUB_TOKEN }}
           status: ${{ job.status }}
