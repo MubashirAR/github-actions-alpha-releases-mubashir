@@ -23,7 +23,9 @@ jobs:
         id: comment-branch
       - name: Get ref name
         id: ref-name
-        run: echo "pr_ref=${{ steps.comment-branch.outputs.head_ref }}" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "pr_ref=${{ steps.comment-branch.outputs.head_ref }}" >> "$GITHUB_OUTPUT"
+          echo ${{ steps.comment-branch.outputs.head_ref }}
   release:
     if: contains(github.event.comment.body, '/release')
     needs: init
