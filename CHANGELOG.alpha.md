@@ -1,3 +1,11 @@
+## [1.7.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.0...v1.7.1) (2024-01-29)
+
+
+### Bug Fixes
+
+* release ([af4046e](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/af4046e2a382205e276b9b34b69c8f3224761d02))
+* release ([d5afc7c](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/d5afc7c480a925c1c381199155e3db6a0a82c532))
+
 # [1.7.0](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.0...v1.7.0) (2024-01-29)
 
 
