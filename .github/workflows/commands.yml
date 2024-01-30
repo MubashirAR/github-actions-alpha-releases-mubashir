@@ -18,29 +18,43 @@ jobs:
     steps:
       - name: first
         run: echo "Cleaning up all pre-releases" && echo ${{ github.event.comment.body }} && echo ${{ contains(github.event.comment.body, '/cleanup') }}
+
       - name: Get PR branch
         uses: xt0rted/pull-request-comment-branch@v1
         id: comment-branch
+
       - name: Get ref name
         id: ref-name
         run: |
           echo "pr_ref=${{ steps.comment-branch.outputs.head_ref }}" >> "$GITHUB_OUTPUT"
           echo ${{ steps.comment-branch.outputs.head_ref }}
+
+      - name: Set latest commit status as ${{ job.status }}
+        uses: myrotvorets/set-commit-status-action@master
+        if: always()
+        with:
+          sha: ${{ steps.comment-branch.outputs.head_sha || github.sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
+
   release:
     if: contains(github.event.comment.body, '/release')
     needs: init
     uses: ./.github/workflows/release.yml
     with:
       COMMENT_REF: ${{ needs.init.outputs.PR_REF }}
+
   cleanup:
     if: contains(github.event.comment.body, '/cleanup')
     needs: init
     uses: ./.github/workflows/cleanup.yml
+
   check-cleanup:
     needs: release
     uses: ./.github/workflows/fail.yml
     with:
       is-comment: true
+
   check-cleanup-final:
     needs: cleanup
     uses: ./.github/workflows/fail.yml
