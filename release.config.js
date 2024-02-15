@@ -16,7 +16,7 @@ const config = {
       "@semantic-release/git",
       {
         message: "chore(release): ${nextRelease.version} [skip ci]",
-        branch: "master",
+        branch: branch,
         assets: [prereleaseChangelog].filter((p) => p),
       },
     ],
