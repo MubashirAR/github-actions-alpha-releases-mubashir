@@ -1,7 +1,6 @@
 console.log("branch", process.env.GITHUB_REF_NAME);
 console.log(process.env.COMMENT_REF, 'comment-ref')
 
-
 const branch = process.env.COMMENT_REF || process.env.GITHUB_REF_NAME;
 const prerelease = branch !== "master";
 const prereleaseChangelog = prerelease && "CHANGELOG.alpha.md";
