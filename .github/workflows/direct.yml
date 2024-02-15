@@ -1,38 +1,38 @@
-name: Cleanup
+# name: Cleanup
 
-on:
-  # push:
-  # pull_request:
-  #   types: 
-  #     closed
+# on:
+#   # push:
+#   # pull_request:
+#   #   types: 
+#   #     closed
 
-jobs:
-  cleanup:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+# jobs:
+#   cleanup:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 14
 
-      - name: Update your package.json with an npm pre-release version
-        id: pre-release-version
-        uses: adobe/update-prerelease-npm-version@v1.0.0
+#       - name: Update your package.json with an npm pre-release version
+#         id: pre-release-version
+#         uses: adobe/update-prerelease-npm-version@v1.0.0
         
-      - name: Install dependencies
-        run: npm ci
+#       - name: Install dependencies
+#         run: npm ci
 
-      # your package.json version should be transformed after the previous step
-      - run: cat package.json
-      # access the pre-release version output. output variable is "pre-release-version"
-      - run: echo ${{ steps.pre-release-version.outputs.pre-release-version }} 
-      # then you publish your package with this pre-release version, under a tag (say 'next' here)
-      - run: echo $GH_TOKEN && npm publish --tag next
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       # your package.json version should be transformed after the previous step
+#       - run: cat package.json
+#       # access the pre-release version output. output variable is "pre-release-version"
+#       - run: echo ${{ steps.pre-release-version.outputs.pre-release-version }} 
+#       # then you publish your package with this pre-release version, under a tag (say 'next' here)
+#       - run: echo $GH_TOKEN && npm publish --tag next
+#         env:
+#             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#             NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#             NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
