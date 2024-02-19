@@ -32,13 +32,9 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v3
-        # with:
-        #   ref: ${{ steps.comment-branch.outputs.head_ref }}
-
-      - name: Checkout code
-        uses: actions/checkout@v3
         with:
           ref: ${{ steps.comment-branch.outputs.head_ref }}
+          fetch-depth: 0
 
       - name: test
         run: git branch && echo $GITHUB_REF_NAME
