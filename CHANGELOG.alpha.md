@@ -1,3 +1,24 @@
+## [1.7.5](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.4...v1.7.5) (2024-02-19)
+
+
+### Bug Fixes
+
+* branch name ([957a833](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/957a833ac4c882667b27f6f528ae30c253c0096f))
+* branch name ([0e1ac27](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/0e1ac27ec9b0efa980b9e73fe0e7d03df86b6a14))
+* branch name ([f5dc48a](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/f5dc48ac78ea87f44c4896f0edbc5c716f84115e))
+* branch name ([6463806](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/64638063eca314f4fd0145272cf80f8285d51236))
+* branch name ([7d2f4cf](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/7d2f4cfc38c731a291ccf2de8b0de3f5ab4087f2))
+* branch name ([244488c](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/244488ca932d310daab063d9009c196ee5e7ed40))
+* branch name ([16fb2e5](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/16fb2e5ca56fbd3e2565a6c67251841d7bd6370e))
+* release ([a5e5f84](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/a5e5f84427bd7731d93bf85700f724b194c73760))
+* release ([6104da5](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/6104da5af4da9c9adc1a9d5a3deaab19bffcbdb6))
+* release ([5150ce7](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/5150ce72115e9036a19859f3b8497dad28fb6f8e))
+* something ([8a1a5b6](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/8a1a5b6857280fa946b02ee764342213f1ad4f0a))
+* something ([7a1c7e1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/7a1c7e16e79e79cd45ea252b488dd2b03b7b4810))
+* something ([ba99f38](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/ba99f38cf2f97a768380ee175642fbb4a4c6f818))
+* something ([6133bab](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/6133babafd6bfcc1f27e3035808a631bc7781634))
+* something ([8d92af2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/8d92af2dc2135a6d0c33824e58a607937d45b9a1))
+
 ## [1.7.4](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.3...v1.7.4) (2024-01-30)
 
 
