@@ -55,6 +55,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMENT_REF: ${{ steps.comment-branch.outputs.head_ref }}
+          GITHUB_REF_NAME: ${{ steps.comment-branch.outputs.head_ref }}
         run: npx semantic-release
   cleanup:
     needs: release
