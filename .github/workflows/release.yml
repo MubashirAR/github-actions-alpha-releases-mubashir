@@ -27,7 +27,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - id: vars
-          uses: bcgov-nr/action-get-pr@vX.Y.Z
+          uses: bcgov-nr/action-get-pr
           with:
             token: ${{ secrets.GITHUB_TOKEN }}
 
