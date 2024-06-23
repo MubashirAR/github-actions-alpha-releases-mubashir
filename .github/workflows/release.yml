@@ -55,6 +55,7 @@ jobs:
             # Default Github Token
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   release:
+    needs: set-pr-status
     runs-on: ubuntu-latest
     steps:
       - name: Get PR branch
