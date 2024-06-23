@@ -27,7 +27,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: first
-          run: ${{ github }}
+          run: ${{ toJson(github) }} ${{ toJson(job) }} ${{ toJson(env) }}
         - name: Set PR Context Status to Pending
           uses: gpuliyar/pr-status-action@v1.0.0
           with:
