@@ -45,7 +45,7 @@ jobs:
             repository: ${{ github.action_repository }}
 
             # PR Number  (Mandatory)
-            pr-number: ${{ github.event.number }}
+            pr-number: ${{ steps.vars.outputs.pr }}
 
             # Name the context to use in the PR  (Mandatory)
             context: cool-context
