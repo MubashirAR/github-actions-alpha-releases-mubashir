@@ -29,13 +29,12 @@ jobs:
   set-pr-status:
       runs-on: ubuntu-latest
       steps:
-        - id: vars
-          uses: bcgov-nr/action-get-pr@v0.0.1
-          with:
-            token: ${{ secrets.GITHUB_TOKEN }}
+        - id: pr-details
+          uses: juztcode/action-get-merged-pull-request@1.0.0
+        
 
         - name: Echo PR number
-          run: echo ${{ steps.vars.outputs.pr }}
+          run: echo ${{ steps.pr-details.outputs.head_branch }} ${{ steps.pr-details.outputs.base_branch }}
         - name: first
           run: ${{ toJson(github) }} ${{ toJson(job) }} ${{ toJson(env) }}
         - name: Set PR Context Status to Pending
@@ -45,7 +44,7 @@ jobs:
             repository: ${{ github.action_repository }}
 
             # PR Number  (Mandatory)
-            pr-number: ${{ github.event.number }}
+            pr-number: ${{ steps.pr-details.outputs.head_branch }}
 
             # Name the context to use in the PR  (Mandatory)
             context: cool-context
