@@ -2,6 +2,9 @@ name: Semantic Release
 
 
 on: 
+  push: 
+    branches: 
+      - master
   # pull_request: 
   #   types: 
   #     - opened
@@ -23,7 +26,46 @@ on:
 #       - master
 
 jobs:
+  set-pr-status:
+      runs-on: ubuntu-latest
+      steps:
+        - id: vars
+          uses: bcgov-nr/action-get-pr@v0.0.1
+          with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+
+        - name: Echo PR number
+          run: echo ${{ steps.vars.outputs.pr }}
+        - name: first
+          run: ${{ toJson(github) }} ${{ toJson(job) }} ${{ toJson(env) }}
+        - name: Set PR Context Status to Pending
+          uses: gpuliyar/pr-status-action@v1.0.0
+          with:
+            # Repository name (Mandatory)
+            repository: ${{ github.action_repository }}
+
+            # PR Number  (Mandatory)
+            pr-number: ${{ github.event.number }}
+
+            # Name the context to use in the PR  (Mandatory)
+            context: cool-context
+
+            # State to apply (Mandatory)
+            # Any of the (error | failure | pending | success) states
+            state: failure
+
+            # A short description of the status (Mandatory)
+            description: This is so awesome to use a context in a PR
+
+            # The target URL to associate with the Context Status (Optional)
+            # This Github UI will link the URL (source of status) to the Context.
+            target_url: https://nice-url.gpuliyar.com
+
+          env:
+            # Default Github Token
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   release:
+    needs: set-pr-status
     runs-on: ubuntu-latest
     steps:
       - name: Get PR branch
@@ -32,10 +74,10 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          ref: ${{ steps.comment-branch.outputs.head_ref }}
+        # with:
+          # ref: ${{ steps.comment-branch.outputs.head_ref }}
           # fetch-depth: 0
-          fetch-tags: true
+          # fetch-tags: true
 
       - name: test
         run: git branch && echo $GITHUB_REF_NAME
