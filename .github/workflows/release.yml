@@ -33,6 +33,7 @@ jobs:
           uses: juztcode/action-get-merged-pull-request@1.0.0
           env:
             # Default Github Token
+            token: ${{ secrets.GITHUB_TOKEN }}
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
 
