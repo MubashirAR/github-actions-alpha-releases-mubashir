@@ -27,7 +27,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: first
-          run: set status for PR ${{ github.event.number }} on repository ${{ github.action_repository }}
+          run: ${{ github }}
         - name: Set PR Context Status to Pending
           uses: gpuliyar/pr-status-action@v1.0.0
           with:
