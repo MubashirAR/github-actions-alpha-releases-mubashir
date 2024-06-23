@@ -26,6 +26,13 @@ jobs:
   set-pr-status:
       runs-on: ubuntu-latest
       steps:
+        - id: vars
+          uses: bcgov-nr/action-get-pr@vX.Y.Z
+          with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+
+        - name: Echo PR number
+          run: echo ${{ steps.vars.outputs.pr }}
         - name: first
           run: ${{ toJson(github) }} ${{ toJson(job) }} ${{ toJson(env) }}
         - name: Set PR Context Status to Pending
