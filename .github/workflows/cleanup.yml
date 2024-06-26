@@ -93,14 +93,20 @@ jobs:
       #     ignore-versions: '^(?!.*${{ github.ref_name }}).*'
       #     # ignore-versions: '^(?!.*${{ steps.ref-name.outputs.pr_ref }}).*'
       #     min-versions-to-keep: ${{ inputs.min-version-to-keep }}
-      - name: Cleanup Tags
-        uses: dev-drprasad/delete-older-releases@v0.3.4
-        # if: steps.ref-name.outputs.pr_ref
+      - name: Execute Delete Release/Tag action
+        uses: ShivamHS/delete-tag@v1
         with:
-          keep_latest: ${{ inputs.min-version-to-keep }}
-          delete_tag_pattern: '${{ github.ref_name }}'
-          # delete_tag_pattern: '${{ steps.ref-name.outputs.pr_ref }}'
-          delete_tags: true
-          delete_prerelease_only: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }} #generate new PAT and give delete access to it
+          keyword: ${{ github.ref_name }}
+          deletetype: "tag" #tag: will delete tags only; release: will delete releases only; tr: will delete both releases and tags
+      # - name: Cleanup Tags
+      #   uses: dev-drprasad/delete-older-releases@v0.3.4
+      #   # if: steps.ref-name.outputs.pr_ref
+      #   with:
+      #     keep_latest: ${{ inputs.min-version-to-keep }}
+      #     delete_tag_pattern: '${{ github.ref_name }}'
+      #     # delete_tag_pattern: '${{ steps.ref-name.outputs.pr_ref }}'
+      #     delete_tags: true
+      #     delete_prerelease_only: true
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
