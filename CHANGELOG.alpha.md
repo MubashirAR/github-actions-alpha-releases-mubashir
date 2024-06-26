@@ -1,3 +1,11 @@
+# [1.7.0-eg-test.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.0-eg-test.1...v1.7.0-eg-test.2) (2024-06-26)
+
+
+### Bug Fixes
+
+* branch ([2062d80](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/2062d8019a6f75f52a456bf9f76c510a8260e919))
+* use delete tag ([da8ced3](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/da8ced3cf73fd6c1ad4373b77519b6df1ff3dc0e))
+
 # [1.7.0-eg-test.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.0...v1.7.0-eg-test.1) (2024-06-26)
 
 
