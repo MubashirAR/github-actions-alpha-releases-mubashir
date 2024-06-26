@@ -28,6 +28,7 @@ on:
 jobs:
   set-pr-status:
       runs-on: ubuntu-latest
+      if: false
       steps:
         - id: pr-details
           uses: juztcode/action-get-merged-pull-request@1.0.0
@@ -35,7 +36,6 @@ jobs:
             # Default Github Token
             token: ${{ secrets.GITHUB_TOKEN }}
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
 
         - name: Echo PR number
           run: echo ${{ steps.pr-details.outputs.head_branch }} ${{ steps.pr-details.outputs.base_branch }}
