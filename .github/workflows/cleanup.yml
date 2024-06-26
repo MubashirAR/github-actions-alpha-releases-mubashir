@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       min-version-to-keep:
-        description: How many versions do you want to keep? Set 0 to delete all versions (default)
+        description: "Number of versions to keep: 0 = delete all (default)"
         type: number
         default: 0
   workflow_call:
@@ -82,24 +82,25 @@ jobs:
       #     node-version: 14
 
       # USE THE FOLLOWING
-      - name: Cleanup Packages
-        # if: steps.ref-name.outputs.pr_ref
-        uses: actions/delete-package-versions@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          package-name: 'github-actions-alpha-releases-mubashir'
-          package-type: 'npm'
-          # IGNORE anything that does NOT include the branch name (delete only ones containing the branch name)
-          ignore-versions: '^(?!.*${{ github.ref_name }}).*'
-          # ignore-versions: '^(?!.*${{ steps.ref-name.outputs.pr_ref }}).*'
-          min-versions-to-keep: ${{ inputs.min-version-to-keep }}
+      # - name: Cleanup Packages
+      #   # if: steps.ref-name.outputs.pr_ref
+      #   uses: actions/delete-package-versions@v4
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     package-name: 'github-actions-alpha-releases-mubashir'
+      #     package-type: 'npm'
+      #     # IGNORE anything that does NOT include the branch name (delete only ones containing the branch name)
+      #     ignore-versions: '^(?!.*${{ github.ref_name }}).*'
+      #     # ignore-versions: '^(?!.*${{ steps.ref-name.outputs.pr_ref }}).*'
+      #     min-versions-to-keep: ${{ inputs.min-version-to-keep }}
       - name: Cleanup Tags
-        uses: dev-drprasad/delete-older-releases@v0.2.1
+        uses: dev-drprasad/delete-older-releases@v0.3.4
         # if: steps.ref-name.outputs.pr_ref
         with:
           keep_latest: ${{ inputs.min-version-to-keep }}
           delete_tag_pattern: '${{ github.ref_name }}'
           # delete_tag_pattern: '${{ steps.ref-name.outputs.pr_ref }}'
           delete_tags: true
+          delete_prerelease_only: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
