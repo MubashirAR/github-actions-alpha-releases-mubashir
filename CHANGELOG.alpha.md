@@ -1,3 +1,10 @@
+# [1.7.0-eg-test.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.0-eg-test.1...v1.7.0-eg-test.2) (2024-06-26)
+
+
+### Bug Fixes
+
+* cleanup ([f72d65b](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/f72d65ba4e05f68020698a95102ed475292f86d6))
+
 # [1.7.0-eg-test.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.6.0...v1.7.0-eg-test.1) (2024-06-26)
 
 
