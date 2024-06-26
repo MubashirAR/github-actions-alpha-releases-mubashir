@@ -20,25 +20,25 @@ jobs:
   cleanup:
     runs-on: ubuntu-latest
     steps:
-      - name: Get PR branch
-        uses: xt0rted/pull-request-comment-branch@v1
-        id: comment-branch
-        continue-on-error: true
+      # - name: Get PR branch
+      #   uses: xt0rted/pull-request-comment-branch@v1
+      #   id: comment-branch
+      #   continue-on-error: true
 
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          ref: ${{ steps.comment-branch.outputs.head_ref }}
+      # - name: Checkout code
+      #   uses: actions/checkout@v3
+      #   with:
+      #     fetch-depth: 0
+      #     ref: ${{ steps.comment-branch.outputs.head_ref }}
 
-      - name: Get ref name
-        id: ref-name
-        run: echo "pr_ref=${{ steps.comment-branch.outputs.head_ref || github.head_ref || github.ref_name }}" >> "$GITHUB_OUTPUT"
+      # - name: Get ref name
+      #   id: ref-name
+      #   run: echo "pr_ref=${{ steps.comment-branch.outputs.head_ref || github.head_ref || github.ref_name }}" >> "$GITHUB_OUTPUT"
 
-      - name: trst
-        run: git branch
-        env:
-          version: '${{ steps.comment-branch.outputs.head_ref }}'
+      # - name: trst
+      #   run: git branch
+      #   env:
+      #     version: '${{ steps.comment-branch.outputs.head_ref }}'
 
       # - name: Get tag
       #   id: get_tag
@@ -78,21 +78,23 @@ jobs:
 
       # USE THE FOLLOWING
       - name: Cleanup Packages
-        if: steps.ref-name.outputs.pr_ref
+        # if: steps.ref-name.outputs.pr_ref
         uses: actions/delete-package-versions@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           package-name: 'github-actions-alpha-releases-mubashir'
           package-type: 'npm'
           # IGNORE anything that does NOT include the branch name (delete only ones containing the branch name)
-          ignore-versions: '^(?!.*${{ steps.ref-name.outputs.pr_ref }}).*'
+          ignore-versions: '^(?!.*${{ github.ref_name }}).*'
+          # ignore-versions: '^(?!.*${{ steps.ref-name.outputs.pr_ref }}).*'
           min-versions-to-keep: ${{ inputs.min-version-to-keep }}
       - name: Cleanup Tags
         uses: dev-drprasad/delete-older-releases@v0.2.1
-        if: steps.ref-name.outputs.pr_ref
+        # if: steps.ref-name.outputs.pr_ref
         with:
           keep_latest: ${{ inputs.min-version-to-keep }}
-          delete_tag_pattern: '${{ steps.ref-name.outputs.pr_ref }}'
+          delete_tag_pattern: '${{ github.ref_name }}'
+          # delete_tag_pattern: '${{ steps.ref-name.outputs.pr_ref }}'
           delete_tags: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
