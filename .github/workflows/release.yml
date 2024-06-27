@@ -1,4 +1,4 @@
-name: Semantic Release
+name: Publish Pre-release
 
 on: 
   # push: 
@@ -113,6 +113,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Add PR check
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+              github.checks.create({
+              name: 'Pending pre-release versions',
+              head_sha: '${{ github.head_ref || github.ref_name }}',
+              status: 'in_progress',
+              output: {
+                  title: 'Pending pre-release versions',
+                  summary: 'There are some pending pre-release versions that need to be deleted. Please run cleanup manually'
+              },
+              owner: context.repo.owner,
+              repo: context.repo.repo
+              })
       - name: Semantic Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -127,5 +143,3 @@ jobs:
     uses: ./.github/workflows/cleanup.yml
     with:
       min-version-to-keep: 1
-
-      
