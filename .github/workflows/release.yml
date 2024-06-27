@@ -61,14 +61,10 @@ jobs:
           env:
             # Default Github Token
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  release:
+  check-pr-exists:
+    name: Check PR exists
     runs-on: ubuntu-latest
     steps:
-      # - name: Get PR branch
-      #   uses: xt0rted/pull-request-comment-branch@v1
-      #   id: comment-branch
-
-      
       - name: Check if PR exists
         id: get-pr-exists
         env:
@@ -89,6 +85,14 @@ jobs:
         run: |
           echo "ERROR: This workflow requires a PR to exist"
           exit 1
+  release:
+    name: Generate and publish pre-release version
+    runs-on: ubuntu-latest
+    steps:
+      # - name: Get PR branch
+      #   uses: xt0rted/pull-request-comment-branch@v1
+      #   id: comment-branch
+
       - name: Checkout code
         uses: actions/checkout@v3
         # with:
@@ -117,6 +121,7 @@ jobs:
           # GITHUB_REF_NAME: ${{ steps.comment-branch.outputs.head_ref }}
         run: npx semantic-release
   cleanup:
+    name: Cleanup old versions
     needs: release
     uses: ./.github/workflows/cleanup.yml
     with:
