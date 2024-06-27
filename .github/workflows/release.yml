@@ -68,6 +68,27 @@ jobs:
       #   uses: xt0rted/pull-request-comment-branch@v1
       #   id: comment-branch
 
+      
+      - name: Check if PR exists
+        id: get-pr-exists
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          prs=$(gh pr list \
+              --repo "$GITHUB_REPOSITORY" \
+              --head "$GITHUB_REF_NAME" \
+              --base 'master' \
+              --json title \
+              --jq 'length')
+          if ((prs > 0)); then
+              echo "exists=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Check if PR exists
+        id: check-pr-exists
+        if: !steps.get-pr-exists.outputs.exists
+        run: |
+          echo "ERROR: This workflow requires a PR to exist"
+          exit 1
       - name: Checkout code
         uses: actions/checkout@v3
         # with:
