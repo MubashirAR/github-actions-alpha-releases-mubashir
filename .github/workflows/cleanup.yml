@@ -28,6 +28,20 @@ jobs:
   cleanup:
     runs-on: ubuntu-latest
     steps:
+      - name: Check if PR exists
+        id: check-pr-exists
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          prs=$(gh pr list \
+              --repo "$GITHUB_REPOSITORY" \
+              --head "$GITHUB_REF_NAME" \
+              --base 'master' \
+              --json title \
+              --jq 'length')
+          if ((prs > 0)); then
+              echo "exists=true" >> "$GITHUB_OUTPUT"
+          fi
       # - name: Get PR branch
       #   uses: xt0rted/pull-request-comment-branch@v1
       #   id: comment-branch
@@ -86,6 +100,7 @@ jobs:
 
       # USE THE FOLLOWING
       - name: Cleanup Packages
+        if: steps.check-pr-exists.outputs.exists
         # if: steps.ref-name.outputs.pr_ref
         uses: actions/delete-package-versions@v4
         with:
@@ -95,12 +110,12 @@ jobs:
           # IGNORE anything that does NOT include the branch name (delete only ones containing the branch name)
           ignore-versions: '^(?!.*${{ github.ref_name }}).*'
           # ignore-versions: '^(?!.*${{ steps.ref-name.outputs.pr_ref }}).*'
-          min-versions-to-keep: ${{ inputs.min-version-to-keep }}
+          min-versions-to-keep: ${{ inputs.min-version-to-keep || 0 }}
       - name: Cleanup Tags
         uses: dev-drprasad/delete-older-releases@v0.2.1
         # if: steps.ref-name.outputs.pr_ref
         with:
-          keep_latest: ${{ inputs.min-version-to-keep }}
+          keep_latest: ${{ inputs.min-version-to-keep || 0 }}
           delete_tag_pattern: '${{ github.ref_name }}'
           # delete_tag_pattern: '${{ steps.ref-name.outputs.pr_ref }}'
           delete_tags: true
