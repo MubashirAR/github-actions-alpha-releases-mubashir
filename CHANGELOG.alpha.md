@@ -1,3 +1,11 @@
+## [1.7.6-eg-test.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.6-eg-test.1...v1.7.6-eg-test.2) (2024-06-27)
+
+
+### Bug Fixes
+
+* new fix ([274d5d3](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/274d5d34f6d3f3422e647532b87b5b6ead74a98a))
+* workflow ([a3dfa60](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/a3dfa602107cfe712d40f35fd67bf17e94913ba6))
+
 ## [1.7.6-eg-test.1](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.5...v1.7.6-eg-test.1) (2024-06-27)
 
 
