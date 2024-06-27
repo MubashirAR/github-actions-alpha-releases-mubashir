@@ -129,7 +129,7 @@ jobs:
           script: |
             github.checks.create({
               name: 'Pending pre-release versions',
-              head_sha: '${{ github.head_ref }}',
+              head_sha: '${{ github.head_ref || github.ref_name }}',
               status: 'completed',
               conclusion: 'action_required',
               output: {
