@@ -1,4 +1,4 @@
-name: Semantic Release
+name: Publish Pre-release
 
 on: 
   # push: 
@@ -121,7 +121,7 @@ jobs:
               github.checks.create({
               name: 'Pending pre-release versions',
               head_sha: '${{ github.head_ref || github.ref_name }}',
-              status: 'pending',
+              status: 'in_progress',
               output: {
                   title: 'Pending pre-release versions',
                   summary: 'There are some pending pre-release versions that need to be deleted. Please run cleanup manually'
