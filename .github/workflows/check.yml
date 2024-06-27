@@ -1,0 +1,38 @@
+name: Semantic Release
+
+on: 
+  push: 
+    branches-ignore: master
+  workflow_call:
+
+jobs:
+  set-pr-status:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Get tag
+          id: get_tag
+          continue-on-error: true
+          uses: oprypin/find-latest-tag@v1
+          with:
+            repository: ${{ github.repository }}
+            regex: '(.*)${{ github.head_ref || github.ref_name}}(.*)'
+              #   tagRegex: '(.*)-eg-(.*)'  # Optional. Returns specified group text as tag name. Full tag string is returned if regex is not defined.
+              #   tagRegexGroup: 1 # Optional. Default is 1.
+
+        - name: Add PR check
+          uses: actions/github-script@v3
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            script: |
+                github.checks.create({
+                name: 'Pending pre-release versions',
+                head_sha: '${{ github.head_ref || github.ref_name }}',
+                status: 'completed',
+                conclusion: '${{ steps.get_tag.outputs.tag && 'action_required' || 'success' }}',
+                output: {
+                    title: 'Pending pre-release versions',
+                    summary: 'There are some pending pre-release versions that need to be deleted. Please run cleanup manually'
+                },
+                owner: context.repo.owner,
+                repo: context.repo.repo
+                })
