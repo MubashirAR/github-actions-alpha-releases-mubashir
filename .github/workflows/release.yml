@@ -87,6 +87,7 @@ jobs:
           exit 1
   release:
     name: Generate and publish pre-release version
+    needs: check-pr-exists
     runs-on: ubuntu-latest
     steps:
       # - name: Get PR branch
