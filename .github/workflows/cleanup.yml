@@ -129,4 +129,4 @@ jobs:
   check-prerelease-versions:
     name: Check pre-release versions
     needs: cleanup
-    uses: ./github/workflows/check.yml
+    uses: ./.github/workflows/check.yml
