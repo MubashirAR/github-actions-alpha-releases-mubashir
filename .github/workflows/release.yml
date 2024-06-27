@@ -85,7 +85,7 @@ jobs:
           fi
       - name: Check if PR exists
         id: check-pr-exists
-        if: !(steps.get-pr-exists.outputs.exists)
+        if: ${{ !steps.get-pr-exists.outputs.exists}}
         run: |
           echo "ERROR: This workflow requires a PR to exist"
           exit 1
