@@ -23,8 +23,6 @@ on:
 #     types: 
 #       closed
 
-# on: workflow_dispatch
-
 jobs:
   cleanup:
     runs-on: ubuntu-latest
@@ -108,3 +106,25 @@ jobs:
           delete_prerelease_only: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add PR check
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.checks.create({
+              name: 'Pending pre-release versions',
+              head_sha: '${{ github.head_ref || github.ref_name }}',
+              status: 'completed',
+              conclusion: '${{ inputs.min-version-to-keep && 'failure' || 'success' }}',
+              output: {
+                title: 'Pending pre-release versions',
+                summary: 'There are some pending pre-release versions that need to be deleted. Please run cleanup manually'
+              },
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            })
+  check-prerelease-versions:
+    name: Check pre-release versions
+    needs: cleanup
+    uses: ./.github/workflows/check.yml
