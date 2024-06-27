@@ -127,8 +127,6 @@ jobs:
               repo: context.repo.repo
             })
   check-prerelease-versions:
-    runs-on: ubuntu-latest
+    name: Check pre-release versions
     needs: cleanup
-    steps:
-      - name:
-        uses: ./github/workflows/check.yml
+    uses: ./github/workflows/check.yml
