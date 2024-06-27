@@ -121,8 +121,6 @@ jobs:
       #     # COMMENT_REF: ${{ steps.comment-branch.outputs.head_ref }}
       #     # GITHUB_REF_NAME: ${{ steps.comment-branch.outputs.head_ref }}
       #   run: npx semantic-release
-      - name:
-        uses: ./github/workflows/check.yml
   cleanup:
     name: Cleanup old versions
     needs: release
