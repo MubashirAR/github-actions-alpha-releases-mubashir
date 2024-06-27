@@ -113,23 +113,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Semantic Release
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # COMMENT_REF: ${{ steps.comment-branch.outputs.head_ref }}
-          # GITHUB_REF_NAME: ${{ steps.comment-branch.outputs.head_ref }}
-        run: npx semantic-release
+      # - name: Semantic Release
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     # COMMENT_REF: ${{ steps.comment-branch.outputs.head_ref }}
+      #     # GITHUB_REF_NAME: ${{ steps.comment-branch.outputs.head_ref }}
+      #   run: npx semantic-release
 
-      - name: Pending pre-release versions
+      - name: Add PR check
         uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             github.checks.create({
               name: 'Pending pre-release versions',
-              head_sha: '${{ github.event.issue.pull_request.head.sha }}',
+              head_sha: '${{ github.head_ref }}',
               status: 'completed',
               conclusion: 'action_required',
               output: {
