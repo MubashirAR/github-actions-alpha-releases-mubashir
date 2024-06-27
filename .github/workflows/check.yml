@@ -1,4 +1,4 @@
-name: Semantic Release
+name: Check Pre-release Versions
 
 on: 
   push: 
