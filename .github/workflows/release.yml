@@ -1,10 +1,9 @@
 name: Semantic Release
 
-
 on: 
-  push: 
-    branches: 
-      - master
+  # push: 
+  #   branches: 
+  #     - master
   workflow_dispatch:
   workflow_call:
     inputs:
@@ -62,7 +61,33 @@ jobs:
           env:
             # Default Github Token
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  check-pr-exists:
+    name: Check PR exists
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if PR exists
+        id: get-pr-exists
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          prs=$(gh pr list \
+              --repo "$GITHUB_REPOSITORY" \
+              --head "$GITHUB_REF_NAME" \
+              --base 'master' \
+              --json title \
+              --jq 'length')
+          if ((prs > 0)); then
+              echo "exists=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Check if PR exists
+        id: check-pr-exists
+        if: ${{ !steps.get-pr-exists.outputs.exists}}
+        run: |
+          echo "ERROR: This workflow requires a PR to exist"
+          exit 1
   release:
+    name: Generate and publish pre-release version
+    needs: check-pr-exists
     runs-on: ubuntu-latest
     steps:
       # - name: Get PR branch
@@ -97,6 +122,7 @@ jobs:
           # GITHUB_REF_NAME: ${{ steps.comment-branch.outputs.head_ref }}
         run: npx semantic-release
   cleanup:
+    name: Cleanup old versions
     needs: release
     uses: ./.github/workflows/cleanup.yml
     with:

@@ -95,12 +95,12 @@ jobs:
           # IGNORE anything that does NOT include the branch name (delete only ones containing the branch name)
           ignore-versions: '^(?!.*${{ github.ref_name }}).*'
           # ignore-versions: '^(?!.*${{ steps.ref-name.outputs.pr_ref }}).*'
-          min-versions-to-keep: ${{ inputs.min-version-to-keep }}
+          min-versions-to-keep: ${{ inputs.min-version-to-keep || 0 }}
       - name: Cleanup Tags
         uses: dev-drprasad/delete-older-releases@v0.2.1
         # if: steps.ref-name.outputs.pr_ref
         with:
-          keep_latest: ${{ inputs.min-version-to-keep }}
+          keep_latest: ${{ inputs.min-version-to-keep || 0 }}
           delete_tag_pattern: '${{ github.ref_name }}'
           # delete_tag_pattern: '${{ steps.ref-name.outputs.pr_ref }}'
           delete_tags: true

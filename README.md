@@ -1,3 +1,3 @@
 # github-actions-alpha-releases-mubashir
 hello
-test1
+test2
