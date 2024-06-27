@@ -28,20 +28,6 @@ jobs:
   cleanup:
     runs-on: ubuntu-latest
     steps:
-      - name: Check if PR exists
-        id: check-pr-exists
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          prs=$(gh pr list \
-              --repo "$GITHUB_REPOSITORY" \
-              --head "$GITHUB_REF_NAME" \
-              --base 'master' \
-              --json title \
-              --jq 'length')
-          if ((prs > 0)); then
-              echo "exists=true" >> "$GITHUB_OUTPUT"
-          fi
       # - name: Get PR branch
       #   uses: xt0rted/pull-request-comment-branch@v1
       #   id: comment-branch
@@ -100,7 +86,6 @@ jobs:
 
       # USE THE FOLLOWING
       - name: Cleanup Packages
-        if: steps.check-pr-exists.outputs.exists
         # if: steps.ref-name.outputs.pr_ref
         uses: actions/delete-package-versions@v4
         with:
