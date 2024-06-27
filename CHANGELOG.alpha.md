@@ -1,3 +1,11 @@
+## [1.7.6-eg-test.3](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.6-eg-test.2...v1.7.6-eg-test.3) (2024-06-27)
+
+
+### Bug Fixes
+
+* add check on release ([9b08183](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/9b08183171c0d703a9d6bdfb90a739a2b1f78907))
+* run on merge? ([b29f903](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/commit/b29f90346cdcf06ac76cd4393ff65faffe95cc4f))
+
 ## [1.7.6-eg-test.2](https://github.com/MubashirAR/github-actions-alpha-releases-mubashir/compare/v1.7.6-eg-test.1...v1.7.6-eg-test.2) (2024-06-27)
 
 
