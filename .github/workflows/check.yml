@@ -1,8 +1,13 @@
 name: Check Pre-release Versions
 
 on: 
-  push: 
-    branches-ignore: master
+  push:
+    branches: 
+      - '**' 
+      branches-ignore: master
+    tags: 
+        - '**' 
+
   workflow_call:
 
 jobs:
