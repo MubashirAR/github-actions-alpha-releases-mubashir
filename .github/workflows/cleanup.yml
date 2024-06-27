@@ -118,7 +118,7 @@ jobs:
               name: 'Pending pre-release versions',
               head_sha: '${{ github.head_ref || github.ref_name }}',
               status: 'completed',
-              conclusion: 'success',
+              conclusion: '${{ inputs.min-version-to-keep && 'failure' || 'success' }}',
               output: {
                 title: 'Pending pre-release versions',
                 summary: 'There are some pending pre-release versions that need to be deleted. Please run cleanup manually'
