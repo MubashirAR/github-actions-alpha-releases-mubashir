@@ -23,8 +23,6 @@ on:
 #     types: 
 #       closed
 
-# on: workflow_dispatch
-
 jobs:
   cleanup:
     runs-on: ubuntu-latest
