@@ -1,6 +1,7 @@
 name: Cleanup
 
-on: 
+on:
+  merge_group:
   pull_request: 
     types: 
       - closed
