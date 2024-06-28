@@ -114,7 +114,7 @@ jobs:
           script: |
             github.checks.create({
               name: 'Pending pre-release versions',
-              head_sha: '${{ github.head_ref || github.ref_name }}',
+              head_sha: '${{ github.event.pull_request && github.event.pull_request.head.ref || github.head_ref || github.ref_name }}',
               status: 'completed',
               conclusion: '${{ inputs.min-version-to-keep && 'failure' || 'success' }}',
               output: {
