@@ -60,7 +60,7 @@ jobs:
       #   # run: echo "{merge_branch}={$RECENT_MERGED_BRANCH_NAME}" >> $GITHUB_OUTPUT
       #   run: echo "merge_branch=$RECENT_MERGED_BRANCH_NAME" >> $GITHUB_OUTPUT && echo $GITHUB_OUTPUT && echo $RECENT_MERGED_BRANCH_NAME && echo jello
       - name: trst
-        run: echo ${{ github.event.pull_request }}
+        run: echo ${{ toJson(github.event.pull_request) }}
 
       # - uses: jay2610/delete-older-releases@1.0.0
       #   with:
