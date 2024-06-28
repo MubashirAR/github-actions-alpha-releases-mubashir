@@ -9,8 +9,7 @@ on:
     inputs:
       COMMENT_REF:
         type: string
-    
-# on:
+
 #   workflow_run:
 #     workflows: [cleanup]
 #     types: 
