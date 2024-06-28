@@ -60,7 +60,7 @@ jobs:
       #   # run: echo "{merge_branch}={$RECENT_MERGED_BRANCH_NAME}" >> $GITHUB_OUTPUT
       #   run: echo "merge_branch=$RECENT_MERGED_BRANCH_NAME" >> $GITHUB_OUTPUT && echo $GITHUB_OUTPUT && echo $RECENT_MERGED_BRANCH_NAME && echo jello
       - name: trst
-        run: echo ${{ toJson(github.event.pull_request) }}
+        run: echo ${{ toJson(github.event.pull_request.head) }}
 
       # - uses: jay2610/delete-older-releases@1.0.0
       #   with:
@@ -92,7 +92,7 @@ jobs:
           package-name: 'github-actions-alpha-releases-mubashir'
           package-type: 'npm'
           # IGNORE anything that does NOT include the branch name (delete only ones containing the branch name)
-          ignore-versions: '^(?!.*${{ github.ref_name }}).*'
+          ignore-versions: '^(?!.*${{ github.event.pull_request && github.event.pull_request.head.ref || github.head_ref || github.ref_name }}).*'
           # ignore-versions: '^(?!.*${{ steps.ref-name.outputs.pr_ref }}).*'
           min-versions-to-keep: ${{ inputs.min-version-to-keep || 0 }}
       - name: Cleanup Tags
@@ -100,7 +100,7 @@ jobs:
         # if: steps.ref-name.outputs.pr_ref
         with:
           keep_latest: ${{ inputs.min-version-to-keep || 0 }}
-          delete_tag_pattern: '${{ github.ref_name }}'
+          delete_tag_pattern: '${{ github.event.pull_request && github.event.pull_request.head.ref || github.head_ref || github.ref_name }}'
           # delete_tag_pattern: '${{ steps.ref-name.outputs.pr_ref }}'
           delete_tags: true
           delete_prerelease_only: true
